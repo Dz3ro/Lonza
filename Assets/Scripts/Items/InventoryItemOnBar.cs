@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class InventoryItemOnBar : MonoBehaviour,
-    IPointerDownHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
+     IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     private Canvas _canvas;
 
@@ -32,12 +32,27 @@ public class InventoryItemOnBar : MonoBehaviour,
         ShowItem();
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    private bool _draggingAll = true;
+    private void SetDraggingButton()
     {
+        if(Input.GetButton("Fire1"))
+        {
+            print("pressed 1");
+            _draggingAll = true;
+        }
+        else if (Input.GetButton("Fire2"))
+        {
+            _draggingAll = false;
+        }
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        SetDraggingButton();
+
+     
+
+
         _canvasGroup = gameObject.GetComponentInParent<CanvasGroup>();
 
         _canvasGroup.blocksRaycasts = false;
@@ -46,11 +61,14 @@ public class InventoryItemOnBar : MonoBehaviour,
 
     public void OnDrag(PointerEventData eventData)
     {
+        
         _rectTransform.anchoredPosition += eventData.delta / _canvas.scaleFactor;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        
+
         _canvasGroup.blocksRaycasts = true;
         _canvasGroup.alpha = 1f;
         _rectTransform.anchoredPosition = Vector3.zero;
