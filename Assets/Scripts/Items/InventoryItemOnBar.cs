@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class InventoryItemOnBar : MonoBehaviour,
     IPointerDownHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    
     private Canvas _canvas;
 
     private PlayerInventory _plrInv;
@@ -31,13 +30,10 @@ public class InventoryItemOnBar : MonoBehaviour,
     private void Update()
     {
         ShowItem();
-
-        
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -46,7 +42,6 @@ public class InventoryItemOnBar : MonoBehaviour,
 
         _canvasGroup.blocksRaycasts = false;
         _canvasGroup.alpha = 0.5f;
-
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -59,8 +54,6 @@ public class InventoryItemOnBar : MonoBehaviour,
         _canvasGroup.blocksRaycasts = true;
         _canvasGroup.alpha = 1f;
         _rectTransform.anchoredPosition = Vector3.zero;
-
-
     }
 
     private void ShowItem()
@@ -69,32 +62,17 @@ public class InventoryItemOnBar : MonoBehaviour,
 
         var inventoryItem = _plrInv.Inventory[_invtrNmbr];
 
-
-
-        //if (inventoryItem.Item.Name == "Nothing")
-        //{
-        //    _image.color = new Color(255, 255, 255, 0);
-        //    _itemCount.color = new Color(255, 255, 255, 0);
-        //}
-
         if (inventoryItem.Item.Name == "Nothing")
         {
-            _image.color = new Color(255, 255, 255, 0);
-            _itemCount.color = new Color(255, 255, 255, 0);
+            _image.color = Color.clear;
+            _itemCount.color = Color.clear;
         }
-
         else if (inventoryItem.Item.Name != "Nothing")
         {
-            _image.color = new Color(255, 255, 255, 255);
+            _image.color = Color.white;
             _image.sprite = inventoryItem.Item.Image;
-            _itemCount.color = new Color(0, 0, 0, 255);
+            _itemCount.color = Color.black;
             _itemCount.text = inventoryItem.ItemQuantity.ToString();
         }
-
-       
     }
-
-   
-
-
 }

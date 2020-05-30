@@ -44,7 +44,6 @@ public class ItemInUse : MonoBehaviour
                     _currentInvSlot = 9;
             }
             while (_plrInv.Inventory[_currentInvSlot].Item.Name == "Nothing");
-
         else if (scroll < 0)
             do
             {
@@ -91,15 +90,14 @@ public class ItemInUse : MonoBehaviour
 
         if (!_plrHasActiveInvSlot)
         {
-            _iconImage.color = new Color(0, 0, 0, 0);
+            _iconImage.color = Color.clear;
             return;
         }
-        _iconImage.color = new Color(255, 255, 255, 255);
+        _iconImage.color = Color.white;
         UpdateCurrentInvSlot();
     }
 
     private void Testing()
     {
-       
     }
 }

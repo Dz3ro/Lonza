@@ -22,7 +22,6 @@ public class InteractionPlayer : MonoBehaviour
                 if (inventorySlot.ItemQuantity < inventorySlot.Item.MaxQUantityPerStack)
                 {
                     inventorySlot.ItemQuantity++;
-                   // print("added succesfully, there was already that item and had place");
                     return;
                 }
             }
@@ -30,11 +29,9 @@ public class InteractionPlayer : MonoBehaviour
             {
                 inventorySlot.Item = item;
                 inventorySlot.ItemQuantity++;
-               // print("added succesfully to new slot");
                 return;
             }
         }
-        //print("adding failed, inventory full");
     }
    
    

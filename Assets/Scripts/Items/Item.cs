@@ -1,15 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Item  
+public class Item
 {
-    
-    public  string Name { get; set; }
+    public string Name { get; set; }
     public string Category { get; set; }
-    public  string Type { get; set; }
-    public  Sprite Image { get; set; }
-    public  int MaxQUantityPerStack { get; set; }
+    public string Type { get; set; }
+    public Sprite Image { get; set; }
+    public int MaxQUantityPerStack { get; set; }
 
     public Item()
     {
@@ -18,13 +15,4 @@ public class Item
         Type = "none";
         MaxQUantityPerStack = 99;
     }
-
-
 }
-
-
-
-     
-
-    
-

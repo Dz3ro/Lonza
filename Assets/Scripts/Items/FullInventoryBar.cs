@@ -1,21 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FullInventoryBar : MonoBehaviour
 {
     [SerializeField]
     private GameObject _partInventory;
+
     [SerializeField]
     private GameObject _fullInventory;
 
-
-    void Start()
+    private void Start()
     {
-        
     }
 
-    void Update()
+    private void Update()
     {
         ToggleBetweenInventoryUI();
     }
@@ -25,7 +22,7 @@ public class FullInventoryBar : MonoBehaviour
         if (!Input.GetButtonDown("Fire3"))
             return;
 
-        if(_partInventory.activeSelf)
+        if (_partInventory.activeSelf)
         {
             _partInventory.SetActive(false);
             _fullInventory.SetActive(true);
@@ -35,7 +32,5 @@ public class FullInventoryBar : MonoBehaviour
             _partInventory.SetActive(true);
             _fullInventory.SetActive(false);
         }
-
-
     }
 }

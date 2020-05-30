@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CollectRock : InteractionPlayer
 {
@@ -9,10 +7,5 @@ public class CollectRock : InteractionPlayer
         var inventoryManager = GameObject.FindGameObjectWithTag("Inventory").GetComponent<AllItems>();
 
         AddItemToInventory(inventoryManager.Rock);
-      
     }
-
-    
-
-    
 }
