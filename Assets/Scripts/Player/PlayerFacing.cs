@@ -39,11 +39,11 @@ public class PlayerFacing : MonoBehaviour
         _interaction.WhenPlayerInteracts();
     }
 
-    private InteractionPlayer _interaction;
+    private ObjectInteractable _interaction;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        _interaction = collision.gameObject.GetComponent<InteractionPlayer>();
+        _interaction = collision.gameObject.GetComponent<ObjectInteractable>();
     }
 
     private void OnTriggerExit2D(Collider2D collision)

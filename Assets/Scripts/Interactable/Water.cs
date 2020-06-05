@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Water : InteractionPlayer
+public class Water : ObjectInteractable
 {
    
 

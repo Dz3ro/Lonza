@@ -1,15 +1,32 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerInventory : MonoBehaviour
 {
-    private int _invSlotsCount = 40;
-    private int _fastInvSlotsCount = 10;
+    public UnityEvent OnSlotClick;
 
     public class InventorySlot
     {
-        public Item Item;
-        public int ItemQuantity;
+        private Item _item;
+        private int _itemQuantity;
+
+        public Item Item
+        {
+            get { return _item; }
+            set { _item = value; }
+        }
+
+        public int ItemQuantity
+        {
+            get { return _itemQuantity; }
+            set
+            {
+                _itemQuantity = value;
+                if (_itemQuantity == 0)
+                    _item = new Item();
+            }
+        }
 
         public InventorySlot()
         {
@@ -18,29 +35,42 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
-    public int haha { get; set; }
+    public InventorySlot ItemHolding
+    {
+        get
+        {
+            return _itemHolding;
+        }
+        set
+        {
+            var temp = value;
+            if (temp.ItemQuantity < 1)
+                temp.Item.Name = "Nothing";
+            _itemHolding = temp;
+        }
+    }
 
     public List<InventorySlot> Inventory = new List<InventorySlot>();
 
-    private void Start()
+    private int _invSlotsCount = 40;
+    private int _fastInvSlotsCount = 10;
+    private InventorySlot _itemHolding;
+
+    private void Awake()
     {
-        CreateInventory();
     }
 
-    private void CreateInventory()
+    private void Start()
     {
-        for (int i = 0; i < _invSlotsCount; i++)
-        {
-            Inventory.Add(new InventorySlot());
-        }
+        _itemHolding = new InventorySlot();
+        CreateInventory();
     }
 
     private void Update()
     {
-        Testing();
     }
 
-    public bool InvFastBarIsEmpty()
+    public bool AllSlotsInInvertoryPartAreEmpty()
     {
         for (int i = 0; i < _fastInvSlotsCount; i++)
             if (Inventory[i].Item.Name != "Nothing")
@@ -49,12 +79,11 @@ public class PlayerInventory : MonoBehaviour
         return true;
     }
 
-    private void Testing()
+    private void CreateInventory()
     {
-        foreach (var slot in Inventory)
+        for (int i = 0; i < _invSlotsCount; i++)
         {
-            if (slot.ItemQuantity == 0 && slot.Item.Name != "Nothing")
-                slot.Item = new Item();
+            Inventory.Add(new InventorySlot());
         }
     }
 }
