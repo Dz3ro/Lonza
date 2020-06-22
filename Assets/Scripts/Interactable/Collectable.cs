@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class ObjectCollectable : ObjectInteractable
+public class Collectable : ObjectInteractable
 {
     public override void WhenPlayerInteracts()
     {
@@ -46,6 +46,11 @@ public class ObjectCollectable : ObjectInteractable
             if (name == item.Name)
             {
                 AddItemToInventory2(item);
+                /////
+                //////
+                /////
+                ///
+                GameObject.FindGameObjectWithTag("Player").GetComponent<PickItem>().PickUp(gameObject);
                 return;
             }
         }
