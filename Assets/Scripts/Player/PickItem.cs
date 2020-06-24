@@ -40,6 +40,9 @@ public class PickItem : MonoBehaviour
 
     public void PickUp(GameObject ItemPicked)
     {
+        print(_mov.PlayerFacing);
+        _mov.TakingAction = true;
+
         _itemPicked = ItemPicked;
         var rotation = _mov.PlayerFacing;
         _itemImg = ItemPicked.GetComponent<SpriteRenderer>().sprite;
@@ -49,22 +52,24 @@ public class PickItem : MonoBehaviour
 
         if (rotation == Direction.West)
         {
-            _anim.Play("PickItem_Left");
+            _anim.SetBool("Picking", true);
+            _anim.SetInteger("Direction", 0);
         }
         else if (rotation == Direction.East)
         {
-            _anim.Play("PickItem_Right");
+            _anim.SetBool("Picking", true);
+            _anim.SetInteger("Direction", 1);
         }
         else if (rotation == Direction.North)
         {
-            _anim.Play("PickItem_Back");
+            _anim.SetBool("Picking", true);
+            _anim.SetInteger("Direction", 2);
         }
         else if (rotation == Direction.South)
         {
-            _anim.Play("PickItem_Front");
+            _anim.SetBool("Picking", true);
+            _anim.SetInteger("Direction", 3);
         }
-        else
-            print("this should not log");
     }
 
     public void ClearPick()
@@ -82,20 +87,17 @@ public class PickItem : MonoBehaviour
 
     public void PickRight2()
     {
-        _itemPImg.sprite = _itemImg;
-        _itemPImg.sortingOrder = _plrSortOrder + 1;
-        _itemP.transform.localPosition = new Vector3(_pickOffset, 0, 0);
-
-        Destroy(_itemPicked);
+        PickItemFrame2(new Vector3(_pickOffset, 0, 0), true);
     }
 
     public void PickRight3()
     {
+        PickItemFrame3(new Vector3(0, _pickOffset, 0));
     }
 
     public void PickRight4()
     {
-        _itemP.transform.localPosition = new Vector3(0, _pickOffset, 0);
+        PickItemFrame4();
     }
 
     public void PickLeft0()
@@ -108,20 +110,17 @@ public class PickItem : MonoBehaviour
 
     public void PickLeft2()
     {
-        _itemPImg.sprite = _itemImg;
-        _itemPImg.sortingOrder = _plrSortOrder + 1;
-        _itemP.transform.localPosition = new Vector3(-_pickOffset, 0, 0);
-
-        Destroy(_itemPicked);
+        PickItemFrame2(new Vector3(-_pickOffset, 0, 0), true);
     }
 
     public void PickLeft3()
     {
+        PickItemFrame3(new Vector3(0, _pickOffset, 0));
     }
 
     public void PickLeft4()
     {
-        _itemP.transform.localPosition = new Vector3(0, _pickOffset, 0);
+        PickItemFrame4();
     }
 
     public void PickFront0()
@@ -134,20 +133,17 @@ public class PickItem : MonoBehaviour
 
     public void PickFront2()
     {
-        _itemPImg.sprite = _itemImg;
-        _itemPImg.sortingOrder = _plrSortOrder + 1;
-        _itemP.transform.localPosition = new Vector3(0, 0, 0);
-
-        Destroy(_itemPicked);
+        PickItemFrame2(new Vector3(0, 0, 0), true);
     }
 
     public void PickFront3()
     {
+        PickItemFrame3(new Vector3(0, _pickOffset, 0));
     }
 
     public void PickFront4()
     {
-        _itemP.transform.localPosition = new Vector3(0, _pickOffset, 0);
+        PickItemFrame4();
     }
 
     public void PickBack0()
@@ -160,19 +156,41 @@ public class PickItem : MonoBehaviour
 
     public void PickBack2()
     {
-        _itemPImg.sprite = _itemImg;
-        _itemPImg.sortingOrder = _plrSortOrder - 1;
-        _itemP.transform.localPosition = new Vector3(0, 0, 0);
-
-        Destroy(_itemPicked);
+        PickItemFrame2(new Vector3(0, 0, 0), false);
     }
 
     public void PickBack3()
     {
+        PickItemFrame3(new Vector3(0, _pickOffset, 0));
     }
 
     public void PickBack4()
     {
-        _itemP.transform.localPosition = new Vector3(0, _pickOffset, 0);
+        PickItemFrame4();
+    }
+
+    private void PickItemFrame2(Vector3 ItemLocalPosition,
+        bool LayerItemInFrontOfCharacter)
+    {
+        _itemPImg.sprite = _itemImg;
+        if (LayerItemInFrontOfCharacter)
+            _itemPImg.sortingOrder = _plrSortOrder + 1;
+        else
+            _itemPImg.sortingOrder = _plrSortOrder - 1;
+        _itemP.transform.localPosition = ItemLocalPosition;
+
+        Destroy(_itemPicked);
+    }
+
+    private void PickItemFrame3(Vector3 ItemLocalPosition)
+    {
+        _itemP.transform.localPosition = ItemLocalPosition;
+    }
+
+    private void PickItemFrame4()
+    {
+        _mov.TakingAction = false;
+        _anim.SetBool("Picking", false);
+        ClearPick();
     }
 }

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Collectable : ObjectInteractable
+public class Pickable : ObjectInteractable
 {
     public override void WhenPlayerInteracts()
     {
@@ -50,6 +50,7 @@ public class Collectable : ObjectInteractable
                 //////
                 /////
                 ///
+
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PickItem>().PickUp(gameObject);
                 return;
             }

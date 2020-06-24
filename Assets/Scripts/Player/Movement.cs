@@ -5,6 +5,8 @@ public enum Direction { West, North, East, South };
 public class Movement : MonoBehaviour
 {
     public float movementSpeed = 5f;
+    public bool TakingAction { get { return _takingAction; } set { _takingAction = value; } }
+    private bool _takingAction = false;
 
     private Animator _anim;
     private Rigidbody2D _rigB;
@@ -23,6 +25,14 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (_takingAction)
+        {
+            _xMovement = 0;
+            _yMovement = 0;
+            Animation();
+            return;
+        }
+
         SetupMovementAndDirection();
         MoveCharacter();
         Animation();
