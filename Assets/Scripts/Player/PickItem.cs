@@ -40,7 +40,6 @@ public class PickItem : MonoBehaviour
 
     public void PickUp(GameObject ItemPicked)
     {
-        print(_mov.PlayerFacing);
         _mov.TakingAction = true;
 
         _itemPicked = ItemPicked;

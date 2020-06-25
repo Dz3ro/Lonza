@@ -78,19 +78,27 @@ public class Movement : MonoBehaviour
 
     private void Animation()
     {
-        _anim.SetBool("Moving", false);
-        _anim.SetInteger("moveX", 0);
-        _anim.SetInteger("moveY", 0);
+        if (_xMovement == 0 && _yMovement == 0)
+        {
+            _anim.SetBool("Moving", false);
+            _anim.SetInteger("moveX", 0);
+            _anim.SetInteger("moveY", 0);
+        }
+
+        if (_xMovement != 0 && _yMovement != 0)
+            return;
 
         if (_yMovement != 0)
         {
             _anim.SetBool("Moving", true);
             _anim.SetInteger("moveY", _yMovement);
+            _anim.SetInteger("moveX", 0);
         }
         else if (_xMovement != 0)
         {
             _anim.SetBool("Moving", true);
             _anim.SetInteger("moveX", _xMovement);
+            _anim.SetInteger("moveY", 0);
         }
     }
 
