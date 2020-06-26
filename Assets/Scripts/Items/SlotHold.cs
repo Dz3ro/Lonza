@@ -30,6 +30,7 @@ public class SlotHold : MonoBehaviour
     {
         var mousePos = Input.mousePosition;
         transform.position = mousePos + _offSet;
+        UpdateImage();
     }
 
     public void UpdateImage()

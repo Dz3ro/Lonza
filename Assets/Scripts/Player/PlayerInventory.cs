@@ -45,7 +45,7 @@ public class PlayerInventory : MonoBehaviour
         {
             var temp = value;
             if (temp.ItemQuantity < 1)
-                temp.Item.Name = "Nothing";
+                temp.Item = new Item();
             _itemHolding = temp;
         }
     }
