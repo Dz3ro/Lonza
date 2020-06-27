@@ -78,7 +78,7 @@ public class ObjectInteractable : MonoBehaviour
         var hasCloneInName = false;
         string finalName;
 
-        if (name.Length > 5)
+        if (name.Length > 10)
         {
             var partName = name.Substring(name.Length - 7);
 
@@ -89,6 +89,7 @@ public class ObjectInteractable : MonoBehaviour
             finalName = gameObject.name.Substring(0, gameObject.name.Length - 1);
         else
             finalName = gameObject.name.Substring(0, gameObject.name.Length - 8);
+
 
         return finalName;
 

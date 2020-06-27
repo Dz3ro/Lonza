@@ -19,18 +19,28 @@ public class Collectable : ObjectInteractable
     private int _itemQuantity = 1;
 
     //ADJUST THIS FLOATS FOR DROPANIMATION
-    private float _droppedAnimationSpeed = 2f;
-    //this 2 floats represent the difference in x and Y 
+    private float _droppedAnimationSpeed = 3f;
+
+    //this 2 floats represent the difference in x and Y
     //at end postion from start positions
     private float _droppedAnimationDistX = 0.8f;
+
     private float _droppedAnimationDistY = 0f;
+
     //how far from player the item first shows at drop
-    private float _droppedAnimationDistFromPlayerAtStart = 1f;
+    private float _droppedAnimationDistFromPlayerAtStart = 1.2f;
+
     private float _curveHeight = 1f;
-    /// 
-    
+
+    private float count = 0f;
+
+
+    ///
+    private GameObject _plr;
+
     private void Start()
     {
+        _plr = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Update()
@@ -38,9 +48,6 @@ public class Collectable : ObjectInteractable
         RecentlyDroppedAnimation();
     }
 
-    private float count = 0f;
-
-   
 
     private void RecentlyDroppedAnimation()
     {
@@ -63,15 +70,15 @@ public class Collectable : ObjectInteractable
 
             if (transform.position == m2)
                 JustDroppped = false;
-
-
         }
     }
 
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        AddItemToInventory(_itemQuantity);
-        Destroy(gameObject);
+        if (collision.gameObject == _plr)
+        {
+            AddItemToInventory(_itemQuantity);
+            Destroy(gameObject);
+        }
     }
 }

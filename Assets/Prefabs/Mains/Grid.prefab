@@ -246,14 +246,14 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 8444738975296307151}
     m_ColliderPaths:
-    - - X: 129988000
-        Y: 10000000
-      - X: 109988992
+    - - X: 109988992
         Y: 10000000
       - X: 109988992
         Y: -9999000
       - X: 129988000
         Y: -9999000
+      - X: 129988000
+        Y: 10000000
   m_CompositePaths:
     m_Paths:
     - - {x: 12.998771, y: -0.9999}

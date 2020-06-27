@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Inventory
   - Canvas
+  - Collectable
   layers:
   - Default
   - TransparentFX

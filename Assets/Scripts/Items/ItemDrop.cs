@@ -43,6 +43,9 @@ public class ItemDrop : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         var slotHolding = GameObject.FindGameObjectWithTag("Inventory")
             .GetComponent<PlayerInventory>().ItemHolding;
 
+        if (slotHolding.Item.Name == "Nothing")
+            return;
+
         var slotHoldingName = slotHolding.Item.Name;
         var collectableToDrop = _collectable.FirstOrDefault(gObj => gObj.name.Remove(gObj.name.Length - 1) == slotHoldingName);
 
