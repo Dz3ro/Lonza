@@ -54,7 +54,7 @@ public class SlotClick : MonoBehaviour,
         {
             _image.color = Color.white;
             _image.sprite = inventoryItem.Item.Image;
-            _itemCount.color = Color.black;
+            _itemCount.color = Color.white;
             _itemCount.text = inventoryItem.ItemQuantity.ToString();
         }
     }
@@ -119,6 +119,7 @@ public class SlotClick : MonoBehaviour,
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        print("ahi");
         if (eventData.button == PointerEventData.InputButton.Left)
             ClickSlotLeft();
         else if (eventData.button == PointerEventData.InputButton.Right)

@@ -43,7 +43,7 @@ public class SlotHold : MonoBehaviour
         else
         {
             _img.color = Color.white;
-            _counter.color = Color.black;
+            _counter.color = Color.white;
             _img.sprite = _plrInv.ItemHolding.Item.Image;
             _counter.text = _plrInv.ItemHolding.ItemQuantity.ToString();
         }
