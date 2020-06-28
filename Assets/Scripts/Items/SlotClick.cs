@@ -119,7 +119,6 @@ public class SlotClick : MonoBehaviour,
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        print("ahi");
         if (eventData.button == PointerEventData.InputButton.Left)
             ClickSlotLeft();
         else if (eventData.button == PointerEventData.InputButton.Right)

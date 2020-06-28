@@ -28,6 +28,7 @@ public class ObjectInteractable : MonoBehaviour
             }
         }
     }
+
     protected void AddItemToInventory(int ItemQuantity)
     {
         // this method validates that in itemslist exist item with name like gameobject
@@ -47,6 +48,7 @@ public class ObjectInteractable : MonoBehaviour
             }
         }
     }
+
     private void AddItemToInventory2(Item item)
     {
         // this method adds the item to your inventory into correct slot
@@ -64,6 +66,9 @@ public class ObjectInteractable : MonoBehaviour
                     return;
                 }
             }
+        }
+        foreach (var inventorySlot in playerInventory)
+        {
             if (inventorySlot.Item.Name == "Nothing")
             {
                 inventorySlot.Item = item;
@@ -72,6 +77,7 @@ public class ObjectInteractable : MonoBehaviour
             }
         }
     }
+
     private string ReadGameObjectName()
     {
         var name = gameObject.name;
@@ -90,12 +96,6 @@ public class ObjectInteractable : MonoBehaviour
         else
             finalName = gameObject.name.Substring(0, gameObject.name.Length - 8);
 
-
         return finalName;
-
     }
-
-    
-
-    
 }
