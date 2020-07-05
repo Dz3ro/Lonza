@@ -19,18 +19,18 @@ public class Collectable : ObjectInteractable
     private int _itemQuantity = 1;
 
     //ADJUST THIS FLOATS FOR DROPANIMATION
-    private float _droppedAnimationSpeed = 3f;
+    private readonly float _droppedAnimationSpeed = 3f;
 
     //this 2 floats represent the difference in x and Y
     //at end postion from start positions
-    private float _droppedAnimationDistX = 0.8f;
+    private readonly float _droppedAnimationDistX = 0.8f;
 
-    private float _droppedAnimationDistY = 0f;
+    private readonly float _droppedAnimationDistY = 0f;
 
     //how far from player the item first shows at drop
-    private float _droppedAnimationDistFromPlayerAtStart = 1.2f;
+    private readonly float _droppedAnimationDistFromPlayerAtStart = 1.2f;
 
-    private float _curveHeight = 1f;
+    private readonly float _curveHeight = 1f;
 
     private float count = 0f;
 

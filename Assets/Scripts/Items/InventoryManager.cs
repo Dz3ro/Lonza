@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
+    
 
-    void Update()
-    {
-        
-    }
+   
 
     public void AddItemToInventory2(Item item)
     {

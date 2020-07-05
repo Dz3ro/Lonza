@@ -13,12 +13,7 @@ public class CameraScript : MonoBehaviour
 
    
 
-    private void LateUpdate()
-    {
-        //var playerPos = _player.transform.position;
-        //var targetPos = playerPos + new Vector3(0f, 0f, -10f);
-        //transform.position = Vector3.Lerp(transform.position, targetPos, MoveSpeed);
-    }
+    
     private void Update()
     {
         var playerPos = _player.transform.position;

@@ -102,7 +102,7 @@ public class SlotClick : MonoBehaviour,
         {
             var quantitySlot = _plrInv.Inventory[_invtrNmbr].ItemQuantity;
             var quantityHold = _plrInv.ItemHolding.ItemQuantity;
-            var quantityMax = _plrInv.ItemHolding.Item.MaxQUantityPerStack;
+            //var quantityMax = _plrInv.ItemHolding.Item.MaxQUantityPerStack;
 
             quantitySlot--;
             quantityHold++;

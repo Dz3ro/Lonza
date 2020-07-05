@@ -12,7 +12,7 @@ public class SlotEquip : MonoBehaviour
     private PlayerInventory _plrInv;
     private bool _plrHasActiveInvSlot = true;
     private int _currentInvSlot = 0;
-    private int SlotsInQuickBar = 10;
+    private readonly int SlotsInQuickBar = 10;
     private RectTransform _slotEquipedPos;
     private Image _slotImage;
     private RectTransform _currentSlotPos;
@@ -24,9 +24,7 @@ public class SlotEquip : MonoBehaviour
         _plrInv = GameObject.FindGameObjectWithTag("Inventory").GetComponent<PlayerInventory>();
     }
 
-    private void Start()
-    {
-    }
+    
 
     private void Update()
     {

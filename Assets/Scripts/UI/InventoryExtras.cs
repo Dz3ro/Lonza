@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
+
 public class InventoryExtras : MonoBehaviour, IPointerClickHandler
 {
     private InventoryToggler _invTog;
@@ -12,6 +13,6 @@ public class InventoryExtras : MonoBehaviour, IPointerClickHandler
 
     private void Awake()
     {
-        _invTog = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryToggler>();
+        _invTog = GameObject.FindGameObjectWithTag("UIScripts").GetComponent<InventoryToggler>();
     }
 }
