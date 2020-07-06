@@ -62,7 +62,7 @@ public class SlotEquip : MonoBehaviour
 
     private void MoveSlotEquipedAuto()
     {
-        if (_plrInv.Inventory[_currentInvSlot].Item.Name != "Nothing")
+        if (! _plrInv.Inventory[_currentInvSlot].Item.ThisIsANewEmptyItem())
             return;
         SlotEquipedSetupLogic(1);
     }
@@ -82,7 +82,8 @@ public class SlotEquip : MonoBehaviour
                 else if (_currentInvSlot < 0)
                     _currentInvSlot = 9;
             }
-            while (_plrInv.Inventory[_currentInvSlot].Item.Name == "Nothing");
+            while (_plrInv.Inventory[_currentInvSlot].Item.ThisIsANewEmptyItem());
+
         }
         else if (direction < 0)
         {
@@ -94,7 +95,8 @@ public class SlotEquip : MonoBehaviour
                 else if (_currentInvSlot < 0)
                     _currentInvSlot = 9;
             }
-            while (_plrInv.Inventory[_currentInvSlot].Item.Name == "Nothing");
+            while (_plrInv.Inventory[_currentInvSlot].Item.ThisIsANewEmptyItem());
+
         }
 
         MoveImageToPosition();

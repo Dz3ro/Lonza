@@ -45,12 +45,14 @@ public class SlotClick : MonoBehaviour,
     {
         var inventoryItem = _plrInv.Inventory[_invtrNmbr];
 
-        if (inventoryItem.Item.Name == "Nothing")
+        if (inventoryItem.Item.ThisIsANewEmptyItem())
+
         {
             _image.color = Color.clear;
             _itemCount.color = Color.clear;
         }
-        else if (inventoryItem.Item.Name != "Nothing")
+        else if (!inventoryItem.Item.ThisIsANewEmptyItem())
+
         {
             _image.color = Color.white;
             _image.sprite = inventoryItem.Item.Image;
@@ -61,7 +63,8 @@ public class SlotClick : MonoBehaviour,
 
     private void ClickSlotLeft()
     {
-        if (_plrInv.ItemHolding.Item.Name == "Nothing")
+        if (_plrInv.ItemHolding.Item.ThisIsANewEmptyItem())
+
         {
             _plrInv.ItemHolding.Item = _plrInv.Inventory[_invtrNmbr].Item;
             _plrInv.ItemHolding.ItemQuantity = _plrInv.Inventory[_invtrNmbr].ItemQuantity;
@@ -92,7 +95,8 @@ public class SlotClick : MonoBehaviour,
 
     private void ClickSlotRight()
     {
-        if (_plrInv.ItemHolding.Item.Name == "Nothing")
+        if (_plrInv.ItemHolding.Item.ThisIsANewEmptyItem())
+
         {
             _plrInv.ItemHolding.Item = _plrInv.Inventory[_invtrNmbr].Item;
             _plrInv.ItemHolding.ItemQuantity++;

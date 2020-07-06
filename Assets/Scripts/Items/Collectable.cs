@@ -77,7 +77,9 @@ public class Collectable : ObjectInteractable
     {
         if (collision.gameObject == _plr)
         {
-            AddItemToInventory(_itemQuantity);
+            var comp = GameObject.FindGameObjectWithTag("Inventory").GetComponent<ItemsAddRemoveSearch>();
+            var name = ReadGameObjectName();
+            comp.ItemAdd(name, _itemQuantity);
             Destroy(gameObject);
         }
     }

@@ -35,7 +35,7 @@ public class SlotHold : MonoBehaviour
 
     public void UpdateImage()
     {
-        if (_plrInv.ItemHolding.Item.Name == "Nothing")
+        if (_plrInv.ItemHolding.Item.ThisIsANewEmptyItem())
         {
             _img.color = Color.clear;
             _counter.color = Color.clear;

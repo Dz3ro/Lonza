@@ -73,7 +73,8 @@ public class PlayerInventory : MonoBehaviour
     public bool AllSlotsInInvertoryPartAreEmpty()
     {
         for (int i = 0; i < _fastInvSlotsCount; i++)
-            if (Inventory[i].Item.Name != "Nothing")
+            if (! Inventory[i].Item.ThisIsANewEmptyItem())
+
                 return false;
 
         return true;

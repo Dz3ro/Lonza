@@ -43,7 +43,8 @@ public class ItemDrop : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         var slotHolding = GameObject.FindGameObjectWithTag("Inventory")
             .GetComponent<PlayerInventory>().ItemHolding;
 
-        if (slotHolding.Item.Name == "Nothing")
+        if (slotHolding.Item.ThisIsANewEmptyItem())
+
             return;
 
         var slotHoldingName = slotHolding.Item.Name;

@@ -25,7 +25,8 @@ public class InventoryManager : MonoBehaviour
                     return;
                 }
             }
-            if (inventorySlot.Item.Name == "Nothing")
+            if (inventorySlot.Item.ThisIsANewEmptyItem())
+
             {
                 inventorySlot.Item = item;
                 inventorySlot.ItemQuantity++;

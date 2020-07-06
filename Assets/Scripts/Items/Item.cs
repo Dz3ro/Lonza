@@ -15,4 +15,14 @@ public class Item
         Type = "none";
         MaxQUantityPerStack = 99;
     }
+
+    public bool ThisIsANewEmptyItem()
+    {
+        var x = new Item();
+        if (this.Name != x.Name || this.Category != x.Category ||
+            this.Type != x.Type || 
+            this.MaxQUantityPerStack != x.MaxQUantityPerStack)
+            return false;
+        return true;
+    }
 }
