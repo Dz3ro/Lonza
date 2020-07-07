@@ -7,6 +7,7 @@ public class ObjectInteractable : MonoBehaviour
         print("base interaction");
     }
 
+
     // all my gameojects are named like Rock0 Stick1 Rock3(Clone)
     // this emthod is supposed to read jsut the first word
 

@@ -45,6 +45,7 @@ public class SlotClick : MonoBehaviour,
     {
         var inventoryItem = _plrInv.Inventory[_invtrNmbr];
 
+
         if (inventoryItem.Item.ThisIsANewEmptyItem())
 
         {

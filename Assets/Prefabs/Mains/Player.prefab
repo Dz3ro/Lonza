@@ -293,7 +293,7 @@ Transform:
   m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4090616060063756773}
+  - {fileID: 5057894481170191583}
   - {fileID: 4090616059755295768}
   - {fileID: 523598593}
   - {fileID: 1402501510}
@@ -464,9 +464,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4090616060063756773}
+  - component: {fileID: 5057894481170191583}
   - component: {fileID: 4090616060063756778}
   - component: {fileID: 4090616060063756779}
+  - component: {fileID: 5066146751555816323}
   m_Layer: 0
   m_Name: PlayerFacing
   m_TagString: Untagged
@@ -474,20 +475,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4090616060063756773
-Transform:
+--- !u!224 &5057894481170191583
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4090616060063756774}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 4090616059985419011}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -1}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4090616060063756778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -500,7 +506,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ece0c7c3bf097649bccdb7a23cb9551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AdditionalDownFacingDist: 0.3
+  YOnMovementHorizontal: -0.4
+  XOnMovementHorizontal: 0.7
+  YOnMovementUp: -0.1
+  YOnMovementDown: -1
 --- !u!61 &4090616060063756779
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -518,8 +527,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 1.125, y: 1.125}
+    newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -527,3 +536,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!222 &5066146751555816323
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4090616060063756774}
+  m_CullTransparentMesh: 0

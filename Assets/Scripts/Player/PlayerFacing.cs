@@ -2,15 +2,19 @@
 
 public class PlayerFacing : MonoBehaviour
 {
-    public float AdditionalDownFacingDist = 0.3f;
     private GameObject _player;
-    private float _vectorDistance = 0.7f;
-    private Animator _plrAnim;
+    private Movement _mov;
+
+    public float YOnMovementHorizontal = -0.4f;
+    public float XOnMovementHorizontal = 0.7f;
+    public float YOnMovementUp = -0.1f;
+    public float YOnMovementDown = -1f;
+
 
     private void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player");
-        _plrAnim = _player.GetComponent<Animator>();
+        _mov = _player.GetComponent<Movement>();
     }
 
     private void Update()
@@ -21,16 +25,18 @@ public class PlayerFacing : MonoBehaviour
 
     private void MoveFacingBlock()
     {
-        var anim = _plrAnim.GetCurrentAnimatorStateInfo(0);
 
-        if (anim.IsName("v3-Front_Move") || anim.IsName("v3-Front_Idle"))
-            transform.position = _player.transform.position + new Vector3(0, -_vectorDistance - AdditionalDownFacingDist, 0);
-        else if (anim.IsName("v3-Back_Move") || anim.IsName("v3-Back_Idle"))
-            transform.position = _player.transform.position + new Vector3(-0, _vectorDistance, 0);
-        else if (anim.IsName("v3_Left_Move") || anim.IsName("v3-Left_Idle"))
-            transform.position = _player.transform.position + new Vector3(-_vectorDistance, 0, 0);
-        else if (anim.IsName("v3_Right_Move") || anim.IsName("v3_Right_Idle"))
-            transform.position = _player.transform.position + new Vector3(_vectorDistance, 0, 0);
+        var dir = _mov.PlayerFacing;
+
+        if (dir == Direction.South)
+            transform.position = _player.transform.position + new Vector3(0, YOnMovementDown, 0);
+        else if (dir == Direction.North)
+            transform.position = _player.transform.position + new Vector3(0, YOnMovementUp, 0);
+        else if (dir == Direction.West)
+            transform.position = _player.transform.position + new Vector3(-XOnMovementHorizontal, YOnMovementHorizontal, 0);
+        else if (dir == Direction.East)
+            transform.position = _player.transform.position + new Vector3(XOnMovementHorizontal, YOnMovementHorizontal, 0);
+
     }
 
     private void Ineract()

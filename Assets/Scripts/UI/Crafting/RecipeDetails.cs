@@ -30,6 +30,8 @@ public class RecipeDetails : MonoBehaviour
     private Image _mat2Img;
     private TextMeshProUGUI _mat2Cost;
 
+    private ItemsAddRemoveSearch _itmGod;
+
     private string _gObjNameOfName = "Name";
     private string _gObjNameOfCost = "Cost";
 
@@ -61,6 +63,9 @@ public class RecipeDetails : MonoBehaviour
             .GetComponent<TextMeshProUGUI>();
         _mat2Img = Material2.GetComponentInChildren<Image>();
 
+        _itmGod = GameObject.FindGameObjectWithTag("Inventory")
+            .GetComponent<ItemsAddRemoveSearch>();
+
     }
 
     public void Start()
@@ -82,6 +87,11 @@ public class RecipeDetails : MonoBehaviour
         _recipeSelected = recipe;
     }
 
+    public Recipe SelectedRecipeShow()
+    {
+        return _recipeSelected;
+    }
+
     public void SetVisuals()
     {
         var rec = _recipeSelected;
@@ -99,57 +109,63 @@ public class RecipeDetails : MonoBehaviour
         _prodName.text = rec.Product.Item1.Name;
         _prodImg.sprite = rec.Product.Item1.Image;
 
-        if (rec.Materials.Count == 0)
-            return;
-
-        if (rec.Materials[0] != null)
-        {
-            var mat = rec.Materials[0];
-            var cost = mat.Item2;
-            var costString = cost.ToString();
-            var textCost = "0/" +  costString;
-
-            Material0.SetActive(true);
-            _mat0Name.text = mat.Item1.Name;
-            _mat0Img.sprite = mat.Item1.Image;
-            _mat0Cost.text = textCost;
-        }
-
-        if (rec.Materials.Count == 1)
-            return;
-
-        if (rec.Materials[1] != null)
-        {
-            var mat = rec.Materials[1];
-            var cost = mat.Item2;
-            var costString = cost.ToString();
-            var textCost = "0/" + costString;
-
-            Material1.SetActive(true);
-            _mat1Name.text = mat.Item1.Name;
-            _mat1Img.sprite = mat.Item1.Image;
-            _mat1Cost.text = textCost;
-        }
-
-        if (rec.Materials.Count == 2)
-            return;
-
-        if (rec.Materials[2] != null)
-        {
-            var mat = rec.Materials[2];
-            var cost = mat.Item2;
-            var costString = cost.ToString();
-            var textCost = "0/" + costString;
-
-            Material2.SetActive(true);
-            _mat2Name.text = mat.Item1.Name;
-            _mat2Img.sprite = mat.Item1.Image;
-            _mat2Cost.text = textCost;
-        }
-
+        SetVisualsMaterial(0, Material0, _mat0Name, _mat0Cost, _mat0Img);
+        SetVisualsMaterial(1, Material1, _mat1Name, _mat1Cost, _mat1Img);
+        SetVisualsMaterial(2, Material2, _mat2Name, _mat2Cost, _mat2Img);
     }
 
-    
+    private void SetVisualsMaterial(int matNumber, GameObject matWindow,
+        TextMeshProUGUI matName, TextMeshProUGUI matCost,
+        Image matImg)
+    {
+
+        var rec = _recipeSelected;
+
+        if (rec.Materials.Count <= matNumber)
+            return;
+
+        if (rec.Materials[matNumber] != null)
+        {
+            var mat = rec.Materials[matNumber];
+            var cost = mat.Item2;
+            var costString = cost.ToString();
+            var materialsHave = CheckMaterials(matNumber);
+            var textCost = materialsHave + "/" + costString;
+
+            matWindow.SetActive(true);
+            matImg.sprite = mat.Item1.Image;
+
+
+            matName.text = mat.Item1.Name;
+            matCost.text = textCost;
+
+            var haveMaterials = materialsHave >= cost;
+            var colorWhenHaveItems = Color.green;
+            var colorWhenMissingItems = new Color32(120,120,120, 50);
+
+            if (haveMaterials)
+            {
+                matName.color = colorWhenHaveItems;
+                matCost.color = colorWhenHaveItems;
+            }
+            else
+            {
+                print("Ahi");
+                matName.color = colorWhenMissingItems;
+                matCost.color = colorWhenMissingItems;
+            }
+        }
+    }
+
+    private int CheckMaterials(int materialsNumber)
+    {
+        var mat = _recipeSelected.Materials[materialsNumber].Item1;
+        var number = _itmGod.ItemQuantityInInventory(mat);
+
+        return number;
+    }
+
+
 
 
 

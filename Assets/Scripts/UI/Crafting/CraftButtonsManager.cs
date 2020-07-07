@@ -8,6 +8,7 @@ public class CraftButtonsManager : MonoBehaviour
     private RecipesAndCategoriesCreator _catMng;
     private RecipesManager _recMng;
     private RecipeDetails _recDtls;
+    private ItemsAddRemoveSearch _itmGod;
 
 
     private void Awake()
@@ -15,6 +16,8 @@ public class CraftButtonsManager : MonoBehaviour
         _catMng = GetComponent<RecipesAndCategoriesCreator>();
         _recMng = GetComponent<RecipesManager>();
         _recDtls = GetComponent<RecipeDetails>();
+        _itmGod = GameObject.FindGameObjectWithTag("Inventory")
+            .GetComponent<ItemsAddRemoveSearch>();
     }
     void Start()
     {
@@ -61,11 +64,18 @@ public class CraftButtonsManager : MonoBehaviour
         RecipeButton(2);
     }    
 
+    public void CreateButton()
+    {
+        var recipe = _recDtls.SelectedRecipeShow();
+
+    }
+
     private void RecipeButton(int number)
     {
         var recipeSelected = _recMng.SelectRecipe(number);
         _recDtls.SetSelectedRecipe(recipeSelected);
         _recDtls.SetVisuals();
+
     }
 
 

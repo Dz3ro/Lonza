@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6185156534019462591}
   - component: {fileID: 6185156534019462590}
   - component: {fileID: 6185156534019462577}
-  - component: {fileID: 6185156534019462589}
+  - component: {fileID: 5835269062625354934}
   m_Layer: 0
   m_Name: Rock0
   m_TagString: Untagged
@@ -132,7 +132,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6185156534019462589
+--- !u!114 &5835269062625354934
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,6 +141,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6185156534019462576}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15ba6a865edf2e142b0bf4100a0ae4ac, type: 3}
+  m_Script: {fileID: 11500000, guid: 92cadcb2a82b6724db4c741ecd2ab8dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
