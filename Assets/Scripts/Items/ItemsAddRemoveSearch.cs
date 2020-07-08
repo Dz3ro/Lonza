@@ -49,29 +49,12 @@ public class ItemsAddRemoveSearch : MonoBehaviour
 
     public int ItemQuantityInInventory(Item item)
     {
-        var number = 0;
-
-        var playerInventory = _plrInv.Inventory;
-
-        foreach (var inventorySlot in playerInventory)
-            if (inventorySlot.Item == item)
-                number += inventorySlot.ItemQuantity;
-
-        return number;
-
+       return CheckItemQuantityInInventory(item);
     }
     public int ItemQuantityInInventory(string itemName)
     {
         var item = FindItemByName(itemName);
-        var number = 0;
-
-        var playerInventory = _plrInv.Inventory;
-
-        foreach (var inventorySlot in playerInventory)
-            if (inventorySlot.Item == item)
-                number += inventorySlot.ItemQuantity;
-
-        return number;
+        return CheckItemQuantityInInventory(item);
     }
 
     public void ItemRemove(Item item)
@@ -146,13 +129,23 @@ public class ItemsAddRemoveSearch : MonoBehaviour
 
     }
 
+    private int CheckItemQuantityInInventory(Item item)
+    {
+        var number = 0;
+        var playerInventory = _plrInv.Inventory;
+
+        foreach (var inventorySlot in playerInventory)
+            if (inventorySlot.Item == item)
+                number += inventorySlot.ItemQuantity;
+
+        // this part checks the hand after inventory
+        if (_plrInv.ItemHolding.Item == item)
+            number += _plrInv.ItemHolding.ItemQuantity;
+
+        return number;
+    }
     private void AddItemToInventory(Item item)
     {
-        // this method adds the item to your inventory into correct slot
-
-        //var playerInventory = GameObject.FindGameObjectWithTag("Inventory")
-        //    .GetComponent<PlayerInventory>().Inventory;
-
         var playerInventory = _plrInv.Inventory;
 
         foreach (var inventorySlot in playerInventory)
@@ -175,6 +168,22 @@ public class ItemsAddRemoveSearch : MonoBehaviour
                 return;
             }
         }
+
+        /// this part of code fires when inventory is full
+        /// tries to do the same stuff with holding slot
+
+        if (_plrInv.ItemHolding.Item == item)
+        {
+            _plrInv.ItemHolding.ItemQuantity++;
+            return;
+        }
+        if (_plrInv.ItemHolding.Item.ThisIsANewEmptyItem())
+        {
+            _plrInv.ItemHolding.Item = item;
+            _plrInv.ItemHolding.ItemQuantity++;
+            return;
+        }
+
     }
     private void RemoveItemFromInventory(Item item)
     {
@@ -188,6 +197,15 @@ public class ItemsAddRemoveSearch : MonoBehaviour
                 return;
             }
         }
+        //
+        /// this part of code fires when inventory is full
+        /// tries to do the same stuff with holding slot
+        if (_plrInv.ItemHolding.Item == item && _plrInv.ItemHolding.ItemQuantity > 0)
+        {
+            _plrInv.ItemHolding.ItemQuantity--;
+            return;
+        }
+        //
     }
     private Item FindItemByName(string name)
     {

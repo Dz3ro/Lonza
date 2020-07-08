@@ -87,8 +87,6 @@ public class CraftButtonsManager : MonoBehaviour
         foreach (var item in recipe.Materials)
             _itmGod.ItemRemove(item.Item1, item.Item2);
     }
-
-
     private void RecipeButton(int number)
     {
         var recipeSelected = _recMng.SelectRecipe(number);
@@ -112,6 +110,5 @@ public class CraftButtonsManager : MonoBehaviour
         _recDtls.SetSelectedRecipe(null);
         //_recDtls.SetVisuals();
     }
-
 
 }
