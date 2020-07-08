@@ -97,6 +97,55 @@ public class ItemsAddRemoveSearch : MonoBehaviour
             RemoveItemFromInventory(item);
     }
 
+    public bool ItemCanBePutInHand(Item item, int itemQuantity = 1)
+    {
+        var hand = _plrInv.ItemHolding;
+        var handItem = _plrInv.ItemHolding.Item;
+        var handItemQuant = _plrInv.ItemHolding.ItemQuantity;
+        var maxQuant = _plrInv.ItemHolding.Item.MaxQUantityPerStack;
+
+        if (!handItem.ThisIsANewEmptyItem() && handItem != item)
+            return false;
+
+        if (handItem == item && handItemQuant + itemQuantity > maxQuant)
+            return false;
+        return true;
+    }
+    public bool ItemCanBePutInHand(string itemName, int itemQuantity = 1)
+    {
+        var item = FindItemByName(itemName);
+        var hand = _plrInv.ItemHolding;
+        var handItem = _plrInv.ItemHolding.Item;
+        var handItemQuant = _plrInv.ItemHolding.ItemQuantity;
+        var maxQuant = _plrInv.ItemHolding.Item.MaxQUantityPerStack;
+
+        if (!handItem.ThisIsANewEmptyItem() && handItem != item)
+            return false;
+
+        if (handItem == item && handItemQuant + itemQuantity > maxQuant)
+            return false;
+        return true;
+    }
+
+    public void ItemPutIntoHand(Item item, int itemQuantity = 1)
+    {
+        if (! ItemCanBePutInHand(item))
+            return;
+        _plrInv.ItemHolding.Item = item;
+        _plrInv.ItemHolding.ItemQuantity = itemQuantity;
+
+    }
+    public void ItemPutIntoHand(string itemName, int itemQuantity = 1)
+    {
+        var item = FindItemByName(itemName);
+
+        if (!ItemCanBePutInHand(item))
+            return;
+        _plrInv.ItemHolding.Item = item;
+        _plrInv.ItemHolding.ItemQuantity = itemQuantity;
+
+    }
+
     private void AddItemToInventory(Item item)
     {
         // this method adds the item to your inventory into correct slot

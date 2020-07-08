@@ -26,6 +26,7 @@ public class SlotClick : MonoBehaviour,
     private void Start()
     {
         _invtrNmbr = Convert.ToInt16(transform.name.ToString().Substring(4));
+        _image.preserveAspect = true;
     }
 
     private void Update()

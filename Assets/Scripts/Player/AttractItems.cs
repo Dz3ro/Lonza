@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AttractItems : MonoBehaviour
 {
-    private readonly float _attractionSpeed = 0.06f;
+    private readonly float _attractionSpeed = 0.02f;
     void Start()
     {
         

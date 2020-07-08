@@ -32,9 +32,6 @@ public class ItemDrop : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     }
 
 
-
-
-
     private void DropItem()
     {
         if (!outsideUI)
@@ -46,15 +43,15 @@ public class ItemDrop : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         if (slotHolding.Item.ThisIsANewEmptyItem())
             return;
 
-        var slotHoldingName = slotHolding.Item.Name;
-        var collectableToDrop = _collectable.FirstOrDefault(gObj => gObj.name.Remove(gObj.name.Length - 1) == slotHoldingName);
+        var collectableToDrop = slotHolding.Item.VrsCollectable;
 
+        if (collectableToDrop == null)
+            return;
         
         var dropped = Instantiate(collectableToDrop);
         dropped.GetComponent<Collectable>().ItemQuantity = slotHolding.ItemQuantity;
         dropped.transform.position = new Vector3(3f,3f,0f);
         dropped.GetComponent<Collectable>().JustDroppped = true;
-
 
         slotHolding.ItemQuantity = 0;
     }

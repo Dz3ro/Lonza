@@ -16,6 +16,9 @@ public class ItemsCreator : MonoBehaviour
 
     public List<Item> ItemsList = new List<Item>();
 
+    /// <summary>
+    /// //list of all items 
+    /// </summary>
     public Item Rock = new Item();
     public Item Stick = new Item();
     public Item Bush = new Item();
@@ -25,6 +28,36 @@ public class ItemsCreator : MonoBehaviour
     public Item Axe = new Item();
     public Item Hoe = new Item();
     public Item FishingRod = new Item();
+    ///////
+
+
+    /// <summary>
+    /// all items in version pickable
+    /// </summary>
+    [SerializeField] private GameObject PickableRock = null;
+    [SerializeField] private GameObject PickableStick = null;
+    [SerializeField] private GameObject PickableBush = null;
+    [SerializeField] private GameObject PickableToolHandle = null;
+    [SerializeField] private GameObject PickableToolBinding = null;
+    [SerializeField] private GameObject PickablePickaxe = null;
+    [SerializeField] private GameObject PickableAxe = null;
+    [SerializeField] private GameObject PickableHoe = null;
+    [SerializeField] private GameObject PickableFishingRod = null;
+    //////
+
+    /// <summary>
+    /// all items in version collectable 
+    /// </summary>
+    [SerializeField] private GameObject CollectableRock = null;
+    [SerializeField] private GameObject CollectableStick = null;
+    [SerializeField] private GameObject CollectableBush = null;
+    [SerializeField] private GameObject CollectableToolHandle = null;
+    [SerializeField] private GameObject CollectableToolBinding = null;
+    [SerializeField] private GameObject CollectablePickaxe = null;
+    [SerializeField] private GameObject CollectableAxe = null;
+    [SerializeField] private GameObject CollectableHoe = null;
+    [SerializeField] private GameObject CollectableFishingRod = null;
+    /////
 
 
 
@@ -37,9 +70,9 @@ public class ItemsCreator : MonoBehaviour
 
     private void CreateAllItems()
     {
-        CreateItem(Rock, "Rock", "Material", "Stone", 16, SpriteRock);
-        CreateItem(Stick, "Stick", "Material", "Wood", 16, SpriteStick);
-        CreateItem(Bush, "Bush", "Material", "Grass", 16, SpriteBush);
+        CreateItem(Rock, "Rock", "Material", "Stone", 16, SpriteRock, CollectableRock, PickableRock);
+        CreateItem(Stick, "Stick", "Material", "Wood", 16, SpriteStick, CollectableStick, PickableStick);
+        CreateItem(Bush, "Bush", "Material", "Grass", 16, SpriteBush, CollectableBush, PickableBush);
         CreateItem(ToolHandle, "Tool Handle", "Material", "Wood", 16, SpriteToolHandle);
         CreateItem(ToolBinding, "Tool Binding", "Material", "Wood", 16, SpriteToolBinding);
         CreateItem(Pickaxe, "Pickaxe", "Tool", "Stone", 1, SpritePickaxe);
@@ -49,14 +82,31 @@ public class ItemsCreator : MonoBehaviour
 
     }
 
-    private void CreateItem(Item Item, string Name, string Category, string Type,
-        int MaxQuant, Sprite Image)
+    private void CreateItem(Item item, string name, string category, string type,
+        int maxQuant, Sprite image)
     {
-        Item.Name = Name;
-        Item.Category = Category;
-        Item.Type = Type;
-        Item.MaxQUantityPerStack = MaxQuant;
-        Item.Image = Image;
-        ItemsList.Add(Item);
+        item.Name = name;
+        item.Category = category;
+        item.Type = type;
+        item.MaxQUantityPerStack = maxQuant;
+        item.Image = image;
+        ItemsList.Add(item);
     }
+
+    private void CreateItem(Item item, string name, string category, string type,
+        int maxQuant, Sprite image, GameObject vrsCollectable,
+        GameObject vrsPickable)
+    {
+        item.Name = name;
+        item.Category = category;
+        item.Type = type;
+        item.MaxQUantityPerStack = maxQuant;
+        item.Image = image;
+        item.VrsCollectable = vrsCollectable;
+        item.VrsPickable = vrsPickable;
+        ItemsList.Add(item);
+       
+    }
+
+
 }

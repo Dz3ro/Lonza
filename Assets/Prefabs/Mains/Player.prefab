@@ -128,7 +128,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.5
+  m_Radius: 2
 --- !u!114 &1402501511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,6 +213,30 @@ MonoBehaviour:
   SpriteAxe: {fileID: 0}
   SpriteHoe: {fileID: 0}
   SpriteFishingRod: {fileID: 0}
+  PickableRock: {fileID: 6185156534019462576, guid: f4b2e10af936e41488dbd561699f7882,
+    type: 3}
+  PickableStick: {fileID: 3159209909390740702, guid: 3946dec207d11994da108a69c293896f,
+    type: 3}
+  PickableBush: {fileID: 1689420718713251770, guid: 41ec74d99fde7994783e06f40016df94,
+    type: 3}
+  PickableToolHandle: {fileID: 0}
+  PickableToolBinding: {fileID: 0}
+  PickablePickaxe: {fileID: 0}
+  PickableAxe: {fileID: 0}
+  PickableHoe: {fileID: 0}
+  PickableFishingRod: {fileID: 0}
+  CollectableRock: {fileID: 8744724701465264269, guid: 713d98892ba2d0e45acdc6ee08f1f93c,
+    type: 3}
+  CollectableStick: {fileID: 7342918425403740081, guid: 605dc9bea50521f4da594e0b165edadf,
+    type: 3}
+  CollectableBush: {fileID: 8520162512926206294, guid: ac6ac4bde31f4d8409d515ab79ea2ac5,
+    type: 3}
+  CollectableToolHandle: {fileID: 0}
+  CollectableToolBinding: {fileID: 0}
+  CollectablePickaxe: {fileID: 0}
+  CollectableAxe: {fileID: 0}
+  CollectableHoe: {fileID: 0}
+  CollectableFishingRod: {fileID: 0}
 --- !u!114 &297495395
 MonoBehaviour:
   m_ObjectHideFlags: 0

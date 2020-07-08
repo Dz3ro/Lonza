@@ -74,12 +74,12 @@ public class RecipeDetails : MonoBehaviour
         _mat0Img.preserveAspect = true;
         _mat1Img.preserveAspect = true;
         _mat2Img.preserveAspect = true;
-        SetVisuals();
+        //SetVisuals();
     }
 
     void Update()
     {
-        
+        SetVisuals();
     }
 
     public void SetSelectedRecipe(Recipe recipe)
@@ -92,7 +92,7 @@ public class RecipeDetails : MonoBehaviour
         return _recipeSelected;
     }
 
-    public void SetVisuals()
+    private void SetVisuals()
     {
         var rec = _recipeSelected;
 
@@ -140,18 +140,17 @@ public class RecipeDetails : MonoBehaviour
             matCost.text = textCost;
 
             var haveMaterials = materialsHave >= cost;
-            var colorWhenHaveItems = Color.green;
-            var colorWhenMissingItems = new Color32(120,120,120, 50);
+            var colorWhenHaveItems = new Color32(0, 255, 0, 255);
+            var colorWhenMissingItems = new Color32(255,0,0, 255);
 
             if (haveMaterials)
             {
-                matName.color = colorWhenHaveItems;
+                //matName.color = colorWhenHaveItems;
                 matCost.color = colorWhenHaveItems;
             }
             else
             {
-                print("Ahi");
-                matName.color = colorWhenMissingItems;
+                //matName.color = colorWhenMissingItems;
                 matCost.color = colorWhenMissingItems;
             }
         }

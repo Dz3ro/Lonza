@@ -23,6 +23,7 @@ public class SlotHold : MonoBehaviour
 
     private void Start()
     {
+        _img.preserveAspect = true;
         _plrInv.OnSlotClick.AddListener(UpdateImage);
     }
 

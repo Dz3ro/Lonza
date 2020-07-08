@@ -82,7 +82,7 @@ public class RecipesManager : MonoBehaviour
 
         SetRecipeVisuals();
         _recDtls.SetSelectedRecipe(null);
-        _recDtls.SetVisuals();
+        //_recDtls.SetVisuals();
     }
 
     private void LateVisualsSet(float delay)
