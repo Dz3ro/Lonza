@@ -50,9 +50,9 @@ public class ItemDrop : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         
         var dropped = Instantiate(collectableToDrop);
         dropped.GetComponent<Collectable>().ItemQuantity = slotHolding.ItemQuantity;
-        dropped.transform.position = new Vector3(3f,3f,0f);
-        dropped.GetComponent<Collectable>().JustDroppped = true;
-
+        dropped.transform.position = GameObject.FindGameObjectWithTag("Player")
+            .transform.position;
+        dropped.transform.position += Vector3.right * 1f;
         slotHolding.ItemQuantity = 0;
     }
 

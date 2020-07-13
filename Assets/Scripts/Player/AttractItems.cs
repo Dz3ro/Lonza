@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AttractItems : MonoBehaviour
 {
-    private readonly float _attractionSpeed = 0.02f;
+    private readonly float _attractionSpeed = 0f;
     void Start()
     {
         
@@ -20,11 +20,9 @@ public class AttractItems : MonoBehaviour
         if (collision.gameObject.tag != "Collectable")
             return;
 
-        var justDropped = collision.gameObject
-            .GetComponent<Collectable>().JustDroppped;
+        
 
-        if (justDropped)
-            return;
+        
 
         collision.gameObject.transform.position = 
             Vector3.MoveTowards(collision.gameObject.transform.position, 
