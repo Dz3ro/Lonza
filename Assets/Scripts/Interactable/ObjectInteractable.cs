@@ -1,11 +1,8 @@
 ﻿using UnityEngine;
 
-public class ObjectInteractable : MonoBehaviour
+public abstract class ObjectInteractable : MonoBehaviour
 {
-    public virtual void WhenPlayerInteracts()
-    {
-        print("base interaction");
-    }
+    public abstract void WhenPlayerInteracts();
 
 
     // all my gameojects are named like Rock0 Stick1 Rock3(Clone)

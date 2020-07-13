@@ -50,11 +50,18 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
+    public InventorySlot ItemEquiped 
+    { 
+        get { return _itemEquiped; }
+        set { _itemEquiped = value; }
+    }
+
     public List<InventorySlot> Inventory = new List<InventorySlot>();
 
     private int _invSlotsCount = 40;
     private int _fastInvSlotsCount = 10;
     private InventorySlot _itemHolding;
+    private InventorySlot _itemEquiped;
 
     private void Awake()
     {
@@ -63,6 +70,7 @@ public class PlayerInventory : MonoBehaviour
     private void Start()
     {
         _itemHolding = new InventorySlot();
+        _itemEquiped = new InventorySlot();
         CreateInventory();
     }
 

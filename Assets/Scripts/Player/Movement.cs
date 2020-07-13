@@ -36,6 +36,18 @@ public class Movement : MonoBehaviour
         SetupMovementAndDirection();
         MoveCharacter();
         Animation();
+       
+    }
+
+    public int ShowDirectionAsIntForAnimator()
+    {
+        if (_playerFacing == Direction.West)
+            return 0;
+        if (_playerFacing == Direction.East)
+            return 3;
+        if (_playerFacing == Direction.North)
+            return 2;
+        return 1;
     }
 
     private void SetupMovementAndDirection()
@@ -102,7 +114,4 @@ public class Movement : MonoBehaviour
         }
     }
 
-    private void Testing()
-    {
-    }
 }

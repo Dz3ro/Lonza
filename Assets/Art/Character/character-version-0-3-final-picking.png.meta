@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: da8e872b721b1794fa61abe1cb5b9205
+guid: 1f5960602a1d48347acc7944e233ce36
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -62,6 +62,162 @@ TextureImporter:
   - first:
       213: -7976486620574208957
     second: character-version-0-3-final-picking_19
+  - first:
+      213: -8388602226295503654
+    second: character-version-0-3-final-picking_20
+  - first:
+      213: -2992582887045029128
+    second: character-version-0-3-final-picking_21
+  - first:
+      213: -8667252814662270379
+    second: character-version-0-3-final-picking_22
+  - first:
+      213: -7181304348521760994
+    second: character-version-0-3-final-picking_23
+  - first:
+      213: -4996097097129425497
+    second: character-version-0-3-final-picking_24
+  - first:
+      213: -4080010635050044950
+    second: character-version-0-3-final-picking_25
+  - first:
+      213: 390900284337016690
+    second: character-version-0-3-final-picking_26
+  - first:
+      213: -774736992378192776
+    second: character-version-0-3-final-picking_27
+  - first:
+      213: -3654885747037628940
+    second: character-version-0-3-final-picking_28
+  - first:
+      213: -29933454720899777
+    second: character-version-0-3-final-picking_29
+  - first:
+      213: 8207818839666860588
+    second: character-version-0-3-final-picking_30
+  - first:
+      213: -3799477096717382678
+    second: character-version-0-3-final-picking_31
+  - first:
+      213: 2476941740730918864
+    second: character-version-0-3-final-picking_32
+  - first:
+      213: -4165257985162310847
+    second: character-version-0-3-final-picking_33
+  - first:
+      213: -303371967940351798
+    second: character-version-0-3-final-picking_34
+  - first:
+      213: 711048527036471875
+    second: character-version-0-3-final-picking_35
+  - first:
+      213: -7499236613351715802
+    second: character-version-0-3-final-picking_36
+  - first:
+      213: 3661984905350688293
+    second: character-version-0-3-final-picking_37
+  - first:
+      213: 5012653902212972379
+    second: character-version-0-3-final-picking_38
+  - first:
+      213: -7470044586228473143
+    second: character-version-0-3-final-picking_39
+  - first:
+      213: -8456899926067240137
+    second: character-version-0-3-final-picking_40
+  - first:
+      213: 5340304396410662449
+    second: character-version-0-3-final-picking_41
+  - first:
+      213: -4020011313242494346
+    second: character-version-0-3-final-picking_42
+  - first:
+      213: -7738131840736709236
+    second: character-version-0-3-final-picking_43
+  - first:
+      213: 6095257121844660081
+    second: character-version-0-3-final-picking_44
+  - first:
+      213: -5270367146429996424
+    second: character-version-0-3-final-picking_45
+  - first:
+      213: 9147033473694130427
+    second: character-version-0-3-final-picking_46
+  - first:
+      213: -3337678960781626910
+    second: character-version-0-3-final-picking_47
+  - first:
+      213: -1096294464007082409
+    second: character-version-0-3-final-picking_48
+  - first:
+      213: 3491500638904403093
+    second: character-version-0-3-final-picking_49
+  - first:
+      213: 6697997221472013497
+    second: character-version-0-3-final-picking_50
+  - first:
+      213: 976712912376091366
+    second: character-version-0-3-final-picking_51
+  - first:
+      213: 376323723844906369
+    second: character-version-0-3-final-picking_52
+  - first:
+      213: 5104700161496604653
+    second: character-version-0-3-final-picking_53
+  - first:
+      213: -8159555537904080929
+    second: character-version-0-3-final-picking_54
+  - first:
+      213: -725518176382861573
+    second: character-version-0-3-final-picking_55
+  - first:
+      213: -1326192324642299322
+    second: character-version-0-3-final-picking_56
+  - first:
+      213: -3167427463637957603
+    second: character-version-0-3-final-picking_57
+  - first:
+      213: 2938330838482878433
+    second: character-version-0-3-final-picking_58
+  - first:
+      213: -6515951863948769506
+    second: character-version-0-3-final-picking_59
+  - first:
+      213: -7239743687051023443
+    second: character-version-0-3-final-picking_60
+  - first:
+      213: 3350575574300520987
+    second: character-version-0-3-final-picking_61
+  - first:
+      213: 6649296079166355673
+    second: character-version-0-3-final-picking_62
+  - first:
+      213: 5532449589913490818
+    second: character-version-0-3-final-picking_63
+  - first:
+      213: -3355706414796545816
+    second: character-version-0-3-final-picking_64
+  - first:
+      213: 2088533499666405433
+    second: character-version-0-3-final-picking_65
+  - first:
+      213: -1371056798884514220
+    second: character-version-0-3-final-picking_66
+  - first:
+      213: 4365725505274867786
+    second: character-version-0-3-final-picking_67
+  - first:
+      213: 2455015636718561750
+    second: character-version-0-3-final-picking_68
+  - first:
+      213: 8269447068866880867
+    second: character-version-0-3-final-picking_69
+  - first:
+      213: -5889371045462721087
+    second: character-version-0-3-final-picking_70
+  - first:
+      213: -3004433507829819321
+    second: character-version-0-3-final-picking_71
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -174,9 +330,9 @@ TextureImporter:
       name: character-version-0-3-final-picking_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 99
-        width: 15
+        x: 2
+        y: 355
+        width: 13
         height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -195,10 +351,10 @@ TextureImporter:
       name: character-version-0-3-final-picking_1
       rect:
         serializedVersion: 2
-        x: 17
-        y: 99
-        width: 15
-        height: 23
+        x: 18
+        y: 355
+        width: 13
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,7 +373,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 34
-        y: 99
+        y: 355
         width: 13
         height: 23
       alignment: 0
@@ -238,9 +394,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 50
-        y: 99
+        y: 355
         width: 13
-        height: 24
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,10 +414,10 @@ TextureImporter:
       name: character-version-0-3-final-picking_4
       rect:
         serializedVersion: 2
-        x: 64
-        y: 99
-        width: 16
-        height: 24
+        x: 66
+        y: 355
+        width: 13
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -279,9 +435,9 @@ TextureImporter:
       name: character-version-0-3-final-picking_5
       rect:
         serializedVersion: 2
-        x: 1
-        y: 67
-        width: 15
+        x: 2
+        y: 323
+        width: 13
         height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -300,10 +456,10 @@ TextureImporter:
       name: character-version-0-3-final-picking_6
       rect:
         serializedVersion: 2
-        x: 17
-        y: 67
-        width: 15
-        height: 23
+        x: 18
+        y: 323
+        width: 13
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -322,7 +478,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 34
-        y: 67
+        y: 323
         width: 13
         height: 23
       alignment: 0
@@ -343,9 +499,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 50
-        y: 67
+        y: 323
         width: 13
-        height: 24
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -363,10 +519,10 @@ TextureImporter:
       name: character-version-0-3-final-picking_9
       rect:
         serializedVersion: 2
-        x: 64
-        y: 67
-        width: 16
-        height: 24
+        x: 66
+        y: 323
+        width: 13
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -384,8 +540,8 @@ TextureImporter:
       name: character-version-0-3-final-picking_10
       rect:
         serializedVersion: 2
-        x: 2
-        y: 34
+        x: 1
+        y: 290
         width: 13
         height: 24
       alignment: 0
@@ -405,10 +561,10 @@ TextureImporter:
       name: character-version-0-3-final-picking_11
       rect:
         serializedVersion: 2
-        x: 18
-        y: 34
+        x: 17
+        y: 290
         width: 13
-        height: 23
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -426,8 +582,8 @@ TextureImporter:
       name: character-version-0-3-final-picking_12
       rect:
         serializedVersion: 2
-        x: 34
-        y: 34
+        x: 33
+        y: 290
         width: 13
         height: 23
       alignment: 0
@@ -447,10 +603,10 @@ TextureImporter:
       name: character-version-0-3-final-picking_13
       rect:
         serializedVersion: 2
-        x: 50
-        y: 34
+        x: 49
+        y: 290
         width: 13
-        height: 24
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -468,10 +624,10 @@ TextureImporter:
       name: character-version-0-3-final-picking_14
       rect:
         serializedVersion: 2
-        x: 66
-        y: 34
+        x: 65
+        y: 290
         width: 13
-        height: 24
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -489,8 +645,8 @@ TextureImporter:
       name: character-version-0-3-final-picking_15
       rect:
         serializedVersion: 2
-        x: 1
-        y: 2
+        x: 2
+        y: 258
         width: 13
         height: 24
       alignment: 0
@@ -510,10 +666,10 @@ TextureImporter:
       name: character-version-0-3-final-picking_16
       rect:
         serializedVersion: 2
-        x: 17
-        y: 2
+        x: 18
+        y: 258
         width: 13
-        height: 23
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -531,8 +687,8 @@ TextureImporter:
       name: character-version-0-3-final-picking_17
       rect:
         serializedVersion: 2
-        x: 33
-        y: 2
+        x: 34
+        y: 258
         width: 13
         height: 23
       alignment: 0
@@ -552,10 +708,10 @@ TextureImporter:
       name: character-version-0-3-final-picking_18
       rect:
         serializedVersion: 2
-        x: 49
-        y: 2
+        x: 50
+        y: 258
         width: 13
-        height: 24
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -573,10 +729,10 @@ TextureImporter:
       name: character-version-0-3-final-picking_19
       rect:
         serializedVersion: 2
-        x: 65
-        y: 2
+        x: 66
+        y: 258
         width: 13
-        height: 24
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -586,6 +742,1098 @@ TextureImporter:
       bones: []
       spriteID: 34ca4090ea3dd4190800000000000000
       internalID: -7976486620574208957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_20
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 227
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad40b9b48b2b59b80800000000000000
+      internalID: -8388602226295503654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_21
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 227
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f2a4c838b53876d0800000000000000
+      internalID: -2992582887045029128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_22
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 227
+        width: 13
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5520d837c7bb7b780800000000000000
+      internalID: -8667252814662270379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_23
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 227
+        width: 13
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1774624eb1e65c90800000000000000
+      internalID: -7181304348521760994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_24
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 227
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a58d3e192c4aaab0800000000000000
+      internalID: -4996097097129425497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_25
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 195
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae1b60ab1f3e067c0800000000000000
+      internalID: -4080010635050044950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_26
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 195
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27fc18eccb1cc6500800000000000000
+      internalID: 390900284337016690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_27
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 195
+        width: 13
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87c71f66fc49f35f0800000000000000
+      internalID: -774736992378192776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_28
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 195
+        width: 13
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f51f2907cc374dc0800000000000000
+      internalID: -3654885747037628940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_29
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 195
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f35e5787ea7a59ff0800000000000000
+      internalID: -29933454720899777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_30
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 162
+        width: 13
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c222a1f6fb708e170800000000000000
+      internalID: 8207818839666860588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_31
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 162
+        width: 13
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeb8de506bb854bc0800000000000000
+      internalID: -3799477096717382678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_32
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 162
+        width: 13
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d7aa99c36ddf5220800000000000000
+      internalID: 2476941740730918864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_33
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 162
+        width: 13
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14b8a845ee70236c0800000000000000
+      internalID: -4165257985162310847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_34
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 162
+        width: 13
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac8aa107dc43acbf0800000000000000
+      internalID: -303371967940351798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_35
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 130
+        width: 13
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34ad2183ed62ed900800000000000000
+      internalID: 711048527036471875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_36
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 130
+        width: 13
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62c4196680c5de790800000000000000
+      internalID: -7499236613351715802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_37
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 130
+        width: 13
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52e25409edbf1d230800000000000000
+      internalID: 3661984905350688293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_38
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 130
+        width: 13
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5f31677a26809540800000000000000
+      internalID: 5012653902212972379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_39
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 130
+        width: 13
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c2a58dd602155890800000000000000
+      internalID: -7470044586228473143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_40
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 98
+        width: 13
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7332cb5e25e03aa80800000000000000
+      internalID: -8456899926067240137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_41
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 98
+        width: 13
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13ea38ced829c1a40800000000000000
+      internalID: 5340304396410662449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_42
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 97
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67a2121720d0638c0800000000000000
+      internalID: -4020011313242494346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_43
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 98
+        width: 13
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c85bfb7d612ac9490800000000000000
+      internalID: -7738131840736709236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_44
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 98
+        width: 13
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 177883aee04b69450800000000000000
+      internalID: 6095257121844660081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_45
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 98
+        width: 13
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 872a6210105ebd6b0800000000000000
+      internalID: -5270367146429996424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_46
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 98
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf065243b7ac0fe70800000000000000
+      internalID: 9147033473694130427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_47
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 98
+        width: 13
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e1f0504bae2ea1d0800000000000000
+      internalID: -3337678960781626910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_48
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 66
+        width: 13
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75e61af4efd29c0f0800000000000000
+      internalID: -1096294464007082409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_49
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 66
+        width: 13
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59442f2155d447030800000000000000
+      internalID: 3491500638904403093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_50
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 65
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bc84644cf014fc50800000000000000
+      internalID: 6697997221472013497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_51
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 66
+        width: 13
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e2d6bd083bfd8d00800000000000000
+      internalID: 976712912376091366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_52
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 66
+        width: 13
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18de358de68f83500800000000000000
+      internalID: 376323723844906369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_53
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 66
+        width: 13
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: def52e240c987d640800000000000000
+      internalID: 5104700161496604653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_54
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 66
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd7e72e287f63ce80800000000000000
+      internalID: -8159555537904080929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_55
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 66
+        width: 13
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfe3c9200117ee5f0800000000000000
+      internalID: -725518176382861573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 35
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 642a8d17b1b689de0800000000000000
+      internalID: -1326192324642299322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_57
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 34
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d140b0ae0890b04d0800000000000000
+      internalID: -3167427463637957603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_58
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 32
+        width: 13
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eff854645c07c820800000000000000
+      internalID: 2938330838482878433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_59
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 34
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e170acf7d40b295a0800000000000000
+      internalID: -6515951863948769506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_60
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 35
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dab62747973478b90800000000000000
+      internalID: -7239743687051023443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_61
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 34
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1278439bb2af7e20800000000000000
+      internalID: 3350575574300520987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_62
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 32
+        width: 13
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d8bb15fd8b074c50800000000000000
+      internalID: 6649296079166355673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_63
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 34
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2859c80079537cc40800000000000000
+      internalID: 5532449589913490818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_64
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 3
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e06d878bc22e61d0800000000000000
+      internalID: -3355706414796545816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_65
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 1
+        width: 13
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9389e150726fbfc10800000000000000
+      internalID: 2088533499666405433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_66
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 0
+        width: 13
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 456ba970b1709fce0800000000000000
+      internalID: -1371056798884514220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_67
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 1
+        width: 13
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4075c8673c269c30800000000000000
+      internalID: 4365725505274867786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_68
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 3
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d9a3a0e6b7f11220800000000000000
+      internalID: 2455015636718561750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_69
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 1
+        width: 13
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 365a4b4bb4af2c270800000000000000
+      internalID: 8269447068866880867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_70
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 0
+        width: 13
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cd39b4cc30c44ea0800000000000000
+      internalID: -5889371045462721087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-version-0-3-final-picking_71
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 1
+        width: 13
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 748d58e84ab1e46d0800000000000000
+      internalID: -3004433507829819321
       vertices: []
       indices: 
       edges: []

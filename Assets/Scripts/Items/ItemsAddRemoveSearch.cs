@@ -23,7 +23,11 @@ public class ItemsAddRemoveSearch : MonoBehaviour
 
     void Update()
     {
-       
+        if (Input.GetKeyDown("r"))
+            ItemAdd("Axe");
+
+        if (Input.GetKeyDown("e"))
+            ItemAdd("Pickaxe");
     }
 
     public void ItemAdd(Item item)
@@ -128,6 +132,8 @@ public class ItemsAddRemoveSearch : MonoBehaviour
         _plrInv.ItemHolding.ItemQuantity = itemQuantity;
 
     }
+
+
 
     private int CheckItemQuantityInInventory(Item item)
     {

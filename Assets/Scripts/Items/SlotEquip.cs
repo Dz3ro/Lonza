@@ -9,6 +9,7 @@ public class SlotEquip : MonoBehaviour
     [SerializeField]
     private GameObject[] _invPartSlots = new GameObject[10];
 
+
     private PlayerInventory _plrInv;
     private bool _plrHasActiveInvSlot = true;
     private int _currentInvSlot = 0;
@@ -16,6 +17,7 @@ public class SlotEquip : MonoBehaviour
     private RectTransform _slotEquipedPos;
     private Image _slotImage;
     private RectTransform _currentSlotPos;
+
 
     private void Awake()
     {
@@ -29,8 +31,22 @@ public class SlotEquip : MonoBehaviour
     private void Update()
     {
         SlotEquipedBehaviour();
+        SetEquipedSlotInInventoryScript();
     }
 
+
+    public Item GetEquipedItem()
+    {
+        var item = _plrInv.Inventory[_currentInvSlot].Item;
+
+        return item;
+    }
+
+
+    private void SetEquipedSlotInInventoryScript()
+    {
+        _plrInv.ItemEquiped = _plrInv.Inventory[_currentInvSlot];
+    }
     private void SlotEquipedBehaviour()
     {
         if (_plrInv.AllSlotsInInvertoryPartAreEmpty())
@@ -47,7 +63,6 @@ public class SlotEquip : MonoBehaviour
         MoveSlotEquipedByPlayer();
         MoveSlotEquipedAuto();
     }
-
     private void MoveSlotEquipedByPlayer()
     {
         var scroll = Input.GetAxis("Mouse ScrollWheel");
@@ -59,14 +74,12 @@ public class SlotEquip : MonoBehaviour
         else if (scroll < 0)
             SlotEquipedSetupLogic(-1);
     }
-
     private void MoveSlotEquipedAuto()
     {
         if (! _plrInv.Inventory[_currentInvSlot].Item.ThisIsANewEmptyItem())
             return;
         SlotEquipedSetupLogic(1);
     }
-
     private void SlotEquipedSetupLogic(int direction)
     {
         if (_plrInv.AllSlotsInInvertoryPartAreEmpty())
@@ -101,13 +114,11 @@ public class SlotEquip : MonoBehaviour
 
         MoveImageToPosition();
     }
-
     private void MoveImageToPosition()
     {
         var transformToChange = FindPositionOfSlot(_currentInvSlot);
         _slotEquipedPos.anchoredPosition = transformToChange.anchoredPosition;
     }
-
     private RectTransform FindPositionOfSlot(int SlotNumber)
     {
         foreach (var invSlot in _invPartSlots)

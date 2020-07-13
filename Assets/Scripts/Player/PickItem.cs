@@ -192,4 +192,15 @@ public class PickItem : MonoBehaviour
         _anim.SetBool("Picking", false);
         ClearPick();
     }
+
+    public void StartTakingAction()
+    {
+        _mov.TakingAction = true;
+    }
+
+    public void FinishTakingAction()
+    {
+        _mov.TakingAction = false;
+        _anim.SetBool("UsingTool", false);
+    }
 }

@@ -83,4 +83,9 @@ public class Collectable : ObjectInteractable
             Destroy(gameObject);
         }
     }
+
+    public override void WhenPlayerInteracts()
+    {
+        throw new System.NotImplementedException();
+    }
 }
