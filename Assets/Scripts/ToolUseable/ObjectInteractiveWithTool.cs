@@ -2,20 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectInteractiveWithTool : MonoBehaviour
+public abstract class ObjectInteractiveWithTool : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-
-    public virtual void OnToolUse(Item item)
-    {
-
-    }
+    public abstract void OnToolUse(Item item);
+    
 }

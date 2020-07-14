@@ -11,6 +11,7 @@ public class ToolUser : MonoBehaviour
     private Animator _plrAnim;
     private PlayerFacing _plrFac;
     private ToolsLogic _toolLog;
+    private GameFreezer _gFrz;
 
     private Direction _dir;
     private GameObject _plr;
@@ -30,6 +31,7 @@ public class ToolUser : MonoBehaviour
         _plrAnim = _plr.GetComponent<Animator>();
         _plrFac = _plr.GetComponentInChildren<PlayerFacing>();
         _toolLog = GetComponent<ToolsLogic>();
+        _gFrz = _plr.GetComponentInChildren<GameFreezer>();
     }
 
     private void Start()
@@ -43,7 +45,7 @@ public class ToolUser : MonoBehaviour
         _takingAction = _plrMov.TakingAction;
         _equip = _plrInv.ItemEquiped.Item;
 
-        StartPickingLeft();
+        //StartPicking();
     }
 
     public void ItemUsageStart()
@@ -56,9 +58,14 @@ public class ToolUser : MonoBehaviour
         _anim.SetBool("UsingTool", false);
     }
 
-    private void StartPickingLeft()
+    public void UseItem()
     {
-        if (!Input.GetButtonDown("Fire1"))
+        StartPicking();
+    }
+
+    private void StartPicking()
+    {
+        if (_gFrz.GameIsFreezed || _gFrz.PlayerActionIsFreezed)
             return;
 
         if (_takingAction != false || _equip.Category != "Tool")
@@ -92,7 +99,6 @@ public class ToolUser : MonoBehaviour
         SetTransforms(gameObject, -0.78f, -0.18f, 90f);
         //_plrFac.UseTool(_equip);
         _toolLog.UseTool(_equip);
-
     }
 
     public void ToolFrameRight0()
@@ -120,8 +126,6 @@ public class ToolUser : MonoBehaviour
         SetTransforms(gameObject, 0.78f, -0.18f, -90f);
         //_plrFac.UseTool(_equip);
         _toolLog.UseTool(_equip);
-
-
     }
 
     public void ToolFrameFront0()
@@ -149,8 +153,6 @@ public class ToolUser : MonoBehaviour
         SetTransforms(gameObject, 0f, -0.29f);
         //_plrFac.UseTool(_equip);
         _toolLog.UseTool(_equip);
-
-
     }
 
     public void ToolFrameBack0()
@@ -160,25 +162,28 @@ public class ToolUser : MonoBehaviour
         toomImg.sortingOrder = plrImg.sortingOrder - 1;
         SetTransforms(gameObject, 0f, 0.94f);
     }
+
     public void ToolFrameBack1()
     {
         SetTransforms(gameObject, 0f, 0.87f);
     }
+
     public void ToolFrameBack2()
     {
         SetTransforms(gameObject, 0f, 0.81f);
     }
+
     public void ToolFrameBack3()
     {
         SetTransforms(gameObject, 0f, 0.3f);
     }
+
     public void ToolFrameBack4()
     {
         SetTransforms(gameObject, 0f, 0);
         //_plrFac.UseTool(_equip);
         _toolLog.UseTool(_equip);
     }
-
 
     public void FinishUsingTool()
     {

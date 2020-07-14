@@ -18,22 +18,33 @@ public class PlayerFacing : MonoBehaviour
     public float YOnMovementDown = -1.1f;
 
     private PlayerInventory _plrInv;
+    private GameFreezer _gFrz;
 
     private string _tillableTilemapName = "DirtToTill";
 
 
-
-    private void Start()
+    private void Awake()
     {
         _player = GameObject.FindGameObjectWithTag("Player");
         _mov = _player.GetComponent<Movement>();
         _plrInv = _player.GetComponent<PlayerInventory>();
+        _gFrz = _player.GetComponentInChildren<GameFreezer>();
+    }
+
+    private void Start()
+    {
+        
     }
 
     private void Update()
     {
         MoveFacingBlock();
-        Ineract();
+        //Interact();
+    }
+
+    public void TakeActionAlt()
+    {
+        Interact();
     }
 
     private void MoveFacingBlock()
@@ -52,9 +63,10 @@ public class PlayerFacing : MonoBehaviour
         CenterPostionToTileCenter();
     }
 
-    private void Ineract()
+    private void Interact()
     {
-        if (!Input.GetButtonDown("Fire2") || _interaction == null)
+        if ( _gFrz.PlayerActionIsFreezed || _gFrz.GameIsFreezed ||
+            _interaction == null)
             
             return;
 

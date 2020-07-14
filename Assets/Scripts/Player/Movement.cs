@@ -10,6 +10,7 @@ public class Movement : MonoBehaviour
 
     private Animator _anim;
     private Rigidbody2D _rigB;
+    private GameFreezer _gFrz;
 
     public Direction PlayerFacing { get { return _playerFacing; } }
 
@@ -17,53 +18,77 @@ public class Movement : MonoBehaviour
     private int _yMovement = 0;
     private Direction _playerFacing = Direction.South;
 
-    private void Start()
+    private void Awake()
     {
         _anim = gameObject.GetComponent<Animator>();
         _rigB = gameObject.GetComponent<Rigidbody2D>();
+        _gFrz = GetComponentInChildren<GameFreezer>();
+    }
+
+    private void Start()
+    {
+        
+        
     }
 
     private void FixedUpdate()
     {
-        if (_takingAction)
+        if (_takingAction || _gFrz.GameIsFreezed)
         {
             _xMovement = 0;
             _yMovement = 0;
             Animation();
             return;
         }
-
         SetupMovementAndDirection();
         MoveCharacter();
         Animation();
-       
     }
 
-    public int ShowDirectionAsIntForAnimator()
+    public void StopHorizontalMovement()
     {
-        if (_playerFacing == Direction.West)
-            return 0;
-        if (_playerFacing == Direction.East)
-            return 3;
-        if (_playerFacing == Direction.North)
-            return 2;
-        return 1;
+        _xMovement = 0;
+    }
+
+    public void StopVerticalMovement()
+    {
+        _yMovement = 0;
+    }
+
+    public void MoveLeft()
+    {
+        _xMovement = -1;
+    }
+
+    public void MoveRight()
+    {
+        _xMovement = 1;
+    }
+
+    public void MoveUp()
+    {
+        _yMovement = 1;
+    }
+
+    public void MoveDown()
+    {
+        _yMovement = -1;
     }
 
     private void SetupMovementAndDirection()
     {
-        if (Input.GetAxis("Horizontal") == 0)
-            _xMovement = 0;
-        else if (Input.GetAxis("Horizontal") > 0)
-            _xMovement = 1;
-        else if (Input.GetAxis("Horizontal") < 0)
-            _xMovement = -1;
-        if (Input.GetAxis("Vertical") == 0)
-            _yMovement = 0;
-        else if (Input.GetAxis("Vertical") > 0)
-            _yMovement = 1;
-        else if (Input.GetAxis("Vertical") < 0)
-            _yMovement = -1;
+        //if (Input.GetAxis("Horizontal") == 0)
+        //    _xMovement = 0;
+        //else if (Input.GetAxis("Horizontal") > 0)
+        //    _xMovement = 1;
+        //else if (Input.GetAxis("Horizontal") < 0)
+        //    _xMovement = -1;
+        //if (Input.GetAxis("Vertical") == 0)
+        //    _yMovement = 0;
+        //else if (Input.GetAxis("Vertical") > 0)
+        //    _yMovement = 1;
+        //else if (Input.GetAxis("Vertical") < 0)
+        //    _yMovement = -1;
 
         if (_xMovement == 0 && _yMovement == 0)
             return;
@@ -118,7 +143,16 @@ public class Movement : MonoBehaviour
             _anim.SetInteger("moveX", _xMovement);
             _anim.SetInteger("moveY", 0);
         }
-
     }
 
+    public int ShowDirectionAsIntForAnimator()
+    {
+        if (_playerFacing == Direction.West)
+            return 0;
+        if (_playerFacing == Direction.East)
+            return 3;
+        if (_playerFacing == Direction.North)
+            return 2;
+        return 1;
+    }
 }

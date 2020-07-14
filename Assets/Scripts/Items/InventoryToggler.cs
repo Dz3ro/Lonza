@@ -13,6 +13,8 @@ public class InventoryToggler : MonoBehaviour
     public GameObject[] ButtonsInvNoBox = null;
     public GameObject[] MenusExtra = null;
 
+    private GameFreezer _gFrz;
+
     // Height of buttons when they are clicked or not
     private readonly float _posYSelected = 206.5f;
 
@@ -35,36 +37,41 @@ public class InventoryToggler : MonoBehaviour
 
     private readonly string _mnCraft = "PageCraft";
 
+
+    private void Awake()
+    {
+        _gFrz = GameObject.FindGameObjectWithTag("Player")
+            .GetComponentInChildren<GameFreezer>();
+    }
     private void Update()
+    {
+    }
+    public void ToggleInventoryUI()
     {
         ToggleBetweenInventoryUI();
     }
-
+    public void SwitchMenu(string ButtonName)
+    {
+        SwitchInventory(ButtonName);
+    }
     private void ToggleBetweenInventoryUI()
     {
-        if (!Input.GetButtonDown("Fire3"))
-            return;
-
         var PartInvIsActive = PartInventory.activeSelf;
 
         if (PartInvIsActive)
         {
             PartInventory.SetActive(false);
             FullInventory.SetActive(true);
+            _gFrz.FreezeGame();
         }
         else
         {
             PartInventory.SetActive(true);
             FullInventory.SetActive(false);
             FullInventoryWithBox.SetActive(false);
+            _gFrz.UnfreezeGame();
         }
     }
-
-    public void SwitchMenu(string ButtonName)
-    {
-        SwitchInventory(ButtonName);
-    }
-
     private void SwitchInventory(string SelectedButtonName)
     {
         _btnSelected = SelectedButtonName;
@@ -86,7 +93,6 @@ public class InventoryToggler : MonoBehaviour
         }
         SwitchMenuAfterButtonPress();
     }
-
     private void MoveButtonsInFullInventory()
     {
         float posX;
@@ -105,7 +111,6 @@ public class InventoryToggler : MonoBehaviour
             rTr.transform.localPosition = new Vector3(posX, posY, 0f);
         }
     }
-
     private void MoveButtonsInFullInventoryWBox()
     {
         var name = _btnSelected;
@@ -125,7 +130,6 @@ public class InventoryToggler : MonoBehaviour
             rTr.transform.localPosition = new Vector3(posX, posY, 0f);
         }
     }
-
     private void SwitchMenuAfterButtonPress()
     {
         if (_btnSelected == null)

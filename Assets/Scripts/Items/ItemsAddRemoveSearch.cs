@@ -23,11 +23,11 @@ public class ItemsAddRemoveSearch : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("r"))
+        if (Input.GetKeyDown("o"))
             ItemAdd("Axe");
 
-        if (Input.GetKeyDown("e"))
-            ItemAdd("Pickaxe");
+        //if (Input.GetKeyDown("e"))
+        //    ItemAdd("Pickaxe");
     }
 
     public void ItemAdd(Item item)
