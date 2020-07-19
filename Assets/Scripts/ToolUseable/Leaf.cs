@@ -12,7 +12,6 @@ public class Leaf : MonoBehaviour
     void Start()
     {
         SetValues();
-        gameObject.GetComponent<SpriteRenderer>().sortingOrder = 10000;
     }
 
     void Update()

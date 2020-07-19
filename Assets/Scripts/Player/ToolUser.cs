@@ -20,7 +20,7 @@ public class ToolUser : MonoBehaviour
     private Dictionary<Item, int> _toolAnimationsId;
 
     private SpriteRenderer _sprRen;
-    private SpriteRenderer _sprRenPlr;
+    private SortingOrderManager _sprOrdMan;
 
     private void Awake()
     {
@@ -36,7 +36,8 @@ public class ToolUser : MonoBehaviour
         _toolLog = GetComponent<ToolsLogic>();
         _gFrz = _plr.GetComponentInChildren<GameFreezer>();
         _sprRen = GetComponent<SpriteRenderer>();
-        _sprRenPlr = _plr.GetComponent<SpriteRenderer>();
+        _sprOrdMan = GameObject.FindGameObjectWithTag("MainCamera")
+            .GetComponent<SortingOrderManager>();
     }
 
     private void Start()
@@ -49,17 +50,11 @@ public class ToolUser : MonoBehaviour
         _dir = _plrMov.PlayerFacing;
         _takingAction = _plrMov.TakingAction;
         _equip = _plrInv.ItemEquiped.Item;
-
-        //StartPicking();
     }
+
     private void LateUpdate()
     {
-        if (_dir == Direction.North)
-            _sprRen.sortingOrder = _sprRenPlr.sortingOrder - 1;
-        else
-            _sprRen.sortingOrder = _sprRenPlr.sortingOrder + 1;
-
-
+        _sprOrdMan.SetSortingOrderForPlayerItem(_sprRen);
     }
 
     public void ItemUsageStart()
@@ -70,7 +65,6 @@ public class ToolUser : MonoBehaviour
     public void ItemUsageEnd()
     {
         _anim.SetBool("UsingTool", false);
-
     }
 
     public void UseItem()

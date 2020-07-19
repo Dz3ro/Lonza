@@ -17,7 +17,7 @@ public class LogBig : ObjectInteractiveWithTool
         base.CreateParticle(particle0, particle1, particle2, particle3, 
             4);
 
-        if (CanPerformActionBelow0())
+        if (CanPerformOneTimeActionBelow0())
         {
             base.DropItemAroundGameObj(ItemToDrop, 4);
             base.StartDeathTimer();

@@ -9,24 +9,26 @@ public class ObjectInteractiveWithTool : MonoBehaviour
     private float _rangeOfDropsAroundGameObj;
 
     protected ItemType _requiedToolType;
-    protected float _deathCountStart;
-    protected bool _startDeathTimer = false;
-    protected bool _itemsHaveDropped = false;
+    private float _deathCountStart;
+    private bool _startDeathTimer = false;
 
-    protected bool _dealtActionOnBelow80 = false;
-    protected bool _dealtActionOnBelow60 = false;
-    protected bool _dealtActionOnBelow40 = false;
-    protected bool _dealtActionOnBelow20 = false;
-    protected bool _dealtActionOnNoHp = false;
+    private bool _dealtOneTimeActionOnBelow80 = false;
+    private bool _dealtOneTimeActionOnBelow60 = false;
+    private bool _dealtOneTimeActionOnBelow40 = false;
+    private bool _dealtOneTimeActionOnBelow20 = false;
+    private bool _dealtOneTimeActionOnNoHp = false;
 
-    protected List<Particle> _particles;
-    protected SpriteRenderer _sprRenParent;
-    protected SpriteRenderer _sprRenChild;
+    private List<Particle> _particles;
+    private SpriteRenderer _sprRen;
+    private SortingOrderManager _sprOrdMan;
 
     protected void Start()
     {
         _particles = new List<Particle>();
-        SetSortingOrder();
+        _sprOrdMan = GameObject.FindGameObjectWithTag("MainCamera")
+            .GetComponent<SortingOrderManager>();
+        _sprRen = GetComponent<SpriteRenderer>();
+        _sprOrdMan.SetSortingOrderForTree(_sprRen);
     }
 
     protected void Update()
@@ -131,25 +133,48 @@ public class ObjectInteractiveWithTool : MonoBehaviour
         boolToChange = true;
         return true;
     }
-    protected bool CanPerformActionBelow80()
+    protected bool CanPerformOneTimeActionBelow80()
     {
-        return CanPerformActionBelow(0.8f, _dealtActionOnBelow80);
+        return CanPerformActionBelow(0.8f, _dealtOneTimeActionOnBelow80);
     }
-    protected bool CanPerformActionBelow60()
+    protected bool CanPerformOneTimeActionBelow60()
     {
-        return CanPerformActionBelow(0.6f, _dealtActionOnBelow60);
+        return CanPerformActionBelow(0.6f, _dealtOneTimeActionOnBelow60);
     }
-    protected bool CanPerformActionBelow40()
+    protected bool CanPerformOneTimeActionBelow40()
     {
-        return CanPerformActionBelow(0.4f, _dealtActionOnBelow40);
+        return CanPerformActionBelow(0.4f, _dealtOneTimeActionOnBelow40);
     }
-    protected bool CanPerformActionBelow20()
+    protected bool CanPerformOneTimeActionBelow20()
     {
-        return CanPerformActionBelow(0.2f, _dealtActionOnBelow20);
+        return CanPerformActionBelow(0.2f, _dealtOneTimeActionOnBelow20);
     }
-    protected bool CanPerformActionBelow0()
+    protected bool CanPerformOneTimeActionBelow0()
     {
-        return CanPerformActionBelow(0f, _dealtActionOnNoHp);
+        return CanPerformActionBelow(0f, _dealtOneTimeActionOnNoHp);
+    }
+    protected void PerformOneTimeActionBelow80()
+    {
+        _dealtOneTimeActionOnBelow80 = true;
+    }
+    protected void PerformOneTimeActionBelow60()
+    {
+        _dealtOneTimeActionOnBelow60 = true;
+
+    }
+    protected void PerformOneTimeActionBelow40()
+    {
+        _dealtOneTimeActionOnBelow40 = true;
+
+    }
+    protected void PerformOneTimeActionBelow20()
+    {
+        _dealtOneTimeActionOnBelow20 = true;
+
+    }
+    protected void PerformOneTimeActionOnDeath()
+    {
+        _dealtOneTimeActionOnNoHp = true;
     }
     protected class Particle
     {
@@ -339,31 +364,5 @@ public class ObjectInteractiveWithTool : MonoBehaviour
             }
         }
     }
-    private void SetSortingOrderWithChild()
-    {
-        var sprites = GetComponentsInChildren<SpriteRenderer>();
-
-        foreach (var sprite in sprites)
-        {
-            if (sprite.gameObject == gameObject)
-                _sprRenParent = sprite;
-            else
-                _sprRenChild = sprite;
-        }
-        var offset = 1f;
-        _sprRenChild.sortingOrder = (int)(100 - (transform.position.y + offset)) * 2;
-        _sprRenParent.sortingOrder = _sprRenChild.sortingOrder - 1;
-    }
-    private void SetSortingOrderWithNoChild()
-    {
-        _sprRenParent = GetComponent<SpriteRenderer>();
-        _sprRenParent.sortingOrder = (int)(100 - (transform.position.y)) * 2;
-    }
-    private void SetSortingOrder()
-    {
-        if (gameObject.transform.childCount == 0)
-            SetSortingOrderWithNoChild();
-        else
-            SetSortingOrderWithChild();
-    }
+    
 }

@@ -58,18 +58,10 @@ public class Tree : ObjectInteractiveWithTool
         if (TreeHasNotFallenOrBeenCut())
             DropLeafes();
 
-        if (CanPerformActionBelow0())
-        {
-            DropItemExactlyOnGameObj(ItemToDrop, 6);
-            StartDeathTimer();
-            _itemsHaveDropped = true;
-        }
-        if (CanPerformActionBelow40())
-        {
-            StartTreeFalling();
-            _timeForTreeToFall = true;
-            _dealtActionOnBelow40 = true;
-        }
+        if (CanPerformOneTimeActionBelow0())
+            PerformOneTimeActionOnDeath();
+        if (CanPerformOneTimeActionBelow40())
+            PerformOneTimeActionBelow40();
     }
 
     private void ShakeTree()
@@ -86,6 +78,7 @@ public class Tree : ObjectInteractiveWithTool
         else
             ShakeTreeDirection(rnd > 10);
     }
+
     private void ShakeTreeDirection(bool shakeRight, float shakePower = 0.5f)
     {
         var direction = shakeRight ? 1 : -1;
@@ -117,6 +110,7 @@ public class Tree : ObjectInteractiveWithTool
         if (_treeUpperPart == null)
             StopCoroutine(Rotation());
     }
+
     private void FallTree()
     {
         if (_treeUpperPart == null)
@@ -166,7 +160,8 @@ public class Tree : ObjectInteractiveWithTool
         if (_timeToStartDropsFromFallenTree)
             StartCoroutine(KeepDroppingWoodWithPArticles());
     }
-    private void StartTreeFalling()
+
+    private void SetupTreeFalling()
     {
         var plrDir = GameObject.FindGameObjectWithTag("Player")
             .GetComponent<Movement>().PlayerFacing;
@@ -185,7 +180,9 @@ public class Tree : ObjectInteractiveWithTool
         var rnd = Random.Range(0, 10);
 
         _fallTreeRightSide = rnd > 5;
+        //_timeForTreeToFall = true;
     }
+
     private void DropLeafes()
     {
         var rnd = Random.Range(1, 3);
@@ -193,6 +190,7 @@ public class Tree : ObjectInteractiveWithTool
         for (int i = 0; i < rnd; i++)
             DropLeaf();
     }
+
     private void DropLeaf()
     {
         var rnd = Random.Range(0, 3);
@@ -207,13 +205,29 @@ public class Tree : ObjectInteractiveWithTool
         leafObj.transform.SetParent(gameObject.transform);
         leafObj.transform.localPosition = startPos;
     }
+
     private void DropWoodenParticles()
     {
         base.CreateParticle(Particle0, Particle1,
             Particle2, Particle3, 8);
     }
+
     private bool TreeHasNotFallenOrBeenCut()
     {
-        return _timeForTreeToFall == false && _treeUpperPart != null; 
+        return _timeForTreeToFall == false && _treeUpperPart != null;
+    }
+
+    private new void PerformOneTimeActionBelow40()
+    {
+        base.PerformOneTimeActionBelow40();
+        SetupTreeFalling();
+        _timeForTreeToFall = true;
+    }
+
+    private new void PerformOneTimeActionOnDeath()
+    {
+        base.PerformOneTimeActionOnDeath();
+        DropItemExactlyOnGameObj(ItemToDrop, 6);
+        StartDeathTimer();
     }
 }

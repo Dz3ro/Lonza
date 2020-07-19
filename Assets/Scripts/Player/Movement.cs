@@ -19,6 +19,7 @@ public class Movement : MonoBehaviour
     private Direction _playerFacing = Direction.South;
 
     private SpriteRenderer _sprRen;
+    private SortingOrderManager _sprOrdMan;
 
     private void Awake()
     {
@@ -26,6 +27,8 @@ public class Movement : MonoBehaviour
         _rigB = gameObject.GetComponent<Rigidbody2D>();
         _gFrz = GetComponentInChildren<GameFreezer>();
         _sprRen = GetComponent<SpriteRenderer>();
+        _sprOrdMan = GameObject.FindGameObjectWithTag("MainCamera")
+            .GetComponent<SortingOrderManager>();
     }
 
     private void Start()
@@ -49,7 +52,7 @@ public class Movement : MonoBehaviour
     }
     private void LateUpdate()
     {
-        _sprRen.sortingOrder = (int)(100 - transform.position.y) * 2;
+        _sprOrdMan.SetSortingOrderForPlayer(_sprRen);
     }
 
     public void StopHorizontalMovement()
