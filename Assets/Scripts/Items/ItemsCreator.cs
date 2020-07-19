@@ -70,19 +70,20 @@ public class ItemsCreator : MonoBehaviour
 
     private void CreateAllItems()
     {
-        CreateItem(Rock, "Rock", "Material", "Stone", 16, SpriteRock, CollectableRock, PickableRock);
-        CreateItem(Stick, "Stick", "Material", "Wood", 16, SpriteStick, CollectableStick, PickableStick);
-        CreateItem(Bush, "Bush", "Material", "Grass", 16, SpriteBush, CollectableBush, PickableBush);
-        CreateItem(ToolHandle, "Tool Handle", "Material", "Wood", 16, SpriteToolHandle);
-        CreateItem(ToolBinding, "Tool Binding", "Material", "Wood", 16, SpriteToolBinding);
-        CreateItem(Pickaxe, "Pickaxe", "Tool", "Stone", 1, SpritePickaxe);
-        CreateItem(Axe, "Axe", "Tool", "Stone", 1, SpriteAxe);
-        CreateItem(Hoe, "Hoe", "Tool", "Stone", 1, SpriteHoe);
-        CreateItem(FishingRod, "Fishing Rod", "Tool", "Wood", 1, SpriteFishingRod);
+        CreateItem(Rock, "Rock", ItemCategory.Collectable, ItemType.None, 16, SpriteRock, CollectableRock, PickableRock);
+        CreateItem(Stick, "Stick", ItemCategory.Collectable, ItemType.None, 16, SpriteStick, CollectableStick, PickableStick);
+        CreateItem(Bush, "Bush", ItemCategory.Collectable, ItemType.None, 16, SpriteBush, CollectableBush, PickableBush);
+        CreateItem(ToolHandle, "Tool Handle", ItemCategory.CraftingMaterialOnly, ItemType.None, 16, SpriteToolHandle);
+        CreateItem(ToolBinding, "Tool Binding", ItemCategory.CraftingMaterialOnly, ItemType.None, 16, SpriteToolBinding);
+        CreateItem(Pickaxe, "Pickaxe", ItemCategory.Tool, ItemType.Pickaxe, 10, 0, 1, SpritePickaxe);
+        CreateItem(Axe, "Axe", ItemCategory.Tool, ItemType.Axe,10, 0, 1, SpriteAxe);
+        CreateItem(Hoe, "Hoe", ItemCategory.Tool, ItemType.Hoe, 1, SpriteHoe);
+        CreateItem(FishingRod, "Fishing Rod", ItemCategory.Tool, ItemType.None, 1, SpriteFishingRod);
 
     }
 
-    private void CreateItem(Item item, string name, string category, string type,
+    private void CreateItem(Item item, string name, 
+        ItemCategory category, ItemType type,
         int maxQuant, Sprite image)
     {
         item.Name = name;
@@ -93,7 +94,22 @@ public class ItemsCreator : MonoBehaviour
         ItemsList.Add(item);
     }
 
-    private void CreateItem(Item item, string name, string category, string type,
+    private void CreateItem(Item item, string name, 
+        ItemCategory category, ItemType type,
+        int damage, int level, int maxQuant, Sprite image)
+    {
+        item.Name = name;
+        item.Category = category;
+        item.Type = type;
+        item.Damage = damage;
+        item.Level = level;
+        item.MaxQUantityPerStack = maxQuant;
+        item.Image = image;
+        ItemsList.Add(item);
+    }
+
+    private void CreateItem(Item item, string name, 
+        ItemCategory category, ItemType type,
         int maxQuant, Sprite image, GameObject vrsCollectable,
         GameObject vrsPickable)
     {

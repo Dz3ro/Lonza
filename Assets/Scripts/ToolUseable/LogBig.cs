@@ -1,60 +1,41 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class LogBig : ObjectInteractiveWithTool
 {
     [SerializeField] private GameObject ItemToDrop;
-    private int _hp = 50;
-    private bool startDeathTimer = false;
+    [SerializeField] private GameObject particle0;
+    [SerializeField] private GameObject particle1;
+    [SerializeField] private GameObject particle2;
+    [SerializeField] private GameObject particle3;
+
+
 
     public override void OnToolUse(Item item)
     {
-        if (item.Name != "Axe")
-            return;
-        ItemHit();
-    }
+        base.DealDamage(item);
+        base.CreateParticle(particle0, particle1, particle2, particle3, 
+            4);
 
-    private void ItemHit()
-    {
-        _hp -= 10;
-        if (_hp <= 0)
+        if (CanPerformActionBelow0())
         {
-            DropItem(4);
-            StartDeathTimer();
+            base.DropItemAroundGameObj(ItemToDrop, 4);
+            base.StartDeathTimer();
         }
     }
 
-    private void DropItem(int itemsAmount = 1)
+    private new void Awake()
     {
-        for (int i = 0; i < itemsAmount; i++)
-            Instantiate(ItemToDrop, transform.position,
-               Quaternion.identity);
+        base.SetupProperties(100, 0, ItemType.Axe);
     }
 
-    private float _deathCountStart;
-
-    private void StartDeathTimer()
+    private new void Start()
     {
-        startDeathTimer = true;
-        gameObject.GetComponent<SpriteRenderer>().color = Color.clear;
-        gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+        base.Start();
     }
 
-    private void DeathTimer()
+    private new void Update()
     {
-        if (startDeathTimer == false)
-            return;
-
-        if (_deathCountStart == 0)
-            _deathCountStart = Time.time;
-
-        if (Time.time - 10f >= _deathCountStart)
-        {
-            Destroy(gameObject);
-        }
-    }
-
-    private void Update()
-    {
-        DeathTimer();
+        base.Update();
     }
 }

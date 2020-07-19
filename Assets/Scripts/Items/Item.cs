@@ -1,10 +1,21 @@
 ﻿using UnityEngine;
 
+public enum ItemType
+{
+    Axe, Pickaxe, Hoe, None,  
+}
+public enum ItemCategory
+{
+    Tool, CraftingMaterialOnly, Collectable,Weapon, None
+}
+
 public class Item 
 {
     public string Name { get; set; }
-    public string Category { get; set; }
-    public string Type { get; set; }
+    public ItemCategory Category { get; set; }
+    public ItemType Type { get; set; }
+    public int Damage { get; set; }
+    public int Level { get; set; }
     public Sprite Image { get; set; }
     public int MaxQUantityPerStack { get; set; }
     public GameObject VrsCollectable { get; set; }
@@ -13,8 +24,10 @@ public class Item
     public Item()
     {
         Name = "Nothing";
-        Category = "none";
-        Type = "none";
+        Category = ItemCategory.None;
+        Type = ItemType.None;
+        Damage = 0;
+        Level = 0;
         MaxQUantityPerStack = 99;
         VrsCollectable = null;
         VrsPickable = null;

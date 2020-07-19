@@ -18,11 +18,14 @@ public class Movement : MonoBehaviour
     private int _yMovement = 0;
     private Direction _playerFacing = Direction.South;
 
+    private SpriteRenderer _sprRen;
+
     private void Awake()
     {
         _anim = gameObject.GetComponent<Animator>();
         _rigB = gameObject.GetComponent<Rigidbody2D>();
         _gFrz = GetComponentInChildren<GameFreezer>();
+        _sprRen = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
@@ -43,6 +46,10 @@ public class Movement : MonoBehaviour
         SetupMovementAndDirection();
         MoveCharacter();
         Animation();
+    }
+    private void LateUpdate()
+    {
+        _sprRen.sortingOrder = (int)(100 - transform.position.y) * 2;
     }
 
     public void StopHorizontalMovement()

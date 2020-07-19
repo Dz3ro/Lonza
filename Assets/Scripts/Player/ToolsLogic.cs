@@ -34,7 +34,7 @@ public class ToolsLogic : MonoBehaviour
 
     public void UseTool(Item item)
     {
-        if (item.Category != "Tool")
+        if (item.Category != ItemCategory.Tool)
             return;
         if (item.Name == "Hoe")
             UseHoe();

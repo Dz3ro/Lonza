@@ -60,6 +60,9 @@ public class SlotClick : MonoBehaviour,
             _image.sprite = inventoryItem.Item.Image;
             _itemCount.color = Color.white;
             _itemCount.text = inventoryItem.ItemQuantity.ToString();
+
+            if(inventoryItem.Item.MaxQUantityPerStack == 1)
+                _itemCount.color = Color.clear;
         }
     }
 

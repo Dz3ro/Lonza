@@ -19,6 +19,8 @@ public class Collectable : ObjectInteractable
     private Vector3 _startPosition;
     private GameObject _plr;
 
+    private Rigidbody2D _rgb;
+
     private float count = 0f;
     private readonly float _animationSpeed = 1.5f;
     private float _curveWidth = 1f;
@@ -26,9 +28,15 @@ public class Collectable : ObjectInteractable
     private float _timeBeforeItemCanBeCollected = 0.5f;
     private float _spawnTimer;
 
-    private void Start()
+
+    private void Awake()
     {
         _plr = GameObject.FindGameObjectWithTag("Player");
+        _rgb = GetComponent<Rigidbody2D>();
+
+    }
+    private void Start()
+    {
         _startPosition = transform.position;
         _spawnTimer = Time.time;
         DropAnimationRandomizer();
@@ -51,7 +59,7 @@ public class Collectable : ObjectInteractable
 
         Vector3 m1 = Vector3.Lerp(point0, point1, count);
         Vector3 m2 = Vector3.Lerp(point1, point2, count);
-        transform.position = Vector3.Lerp(m1, m2, count);
+        _rgb.transform.position = Vector3.Lerp(m1, m2, count);
     }
 
     private void DropAnimationRandomizer()

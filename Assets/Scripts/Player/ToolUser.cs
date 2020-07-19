@@ -19,6 +19,9 @@ public class ToolUser : MonoBehaviour
 
     private Dictionary<Item, int> _toolAnimationsId;
 
+    private SpriteRenderer _sprRen;
+    private SpriteRenderer _sprRenPlr;
+
     private void Awake()
     {
         _plr = GameObject.FindGameObjectWithTag("Player");
@@ -32,6 +35,8 @@ public class ToolUser : MonoBehaviour
         _plrFac = _plr.GetComponentInChildren<PlayerFacing>();
         _toolLog = GetComponent<ToolsLogic>();
         _gFrz = _plr.GetComponentInChildren<GameFreezer>();
+        _sprRen = GetComponent<SpriteRenderer>();
+        _sprRenPlr = _plr.GetComponent<SpriteRenderer>();
     }
 
     private void Start()
@@ -47,6 +52,15 @@ public class ToolUser : MonoBehaviour
 
         //StartPicking();
     }
+    private void LateUpdate()
+    {
+        if (_dir == Direction.North)
+            _sprRen.sortingOrder = _sprRenPlr.sortingOrder - 1;
+        else
+            _sprRen.sortingOrder = _sprRenPlr.sortingOrder + 1;
+
+
+    }
 
     public void ItemUsageStart()
     {
@@ -56,6 +70,7 @@ public class ToolUser : MonoBehaviour
     public void ItemUsageEnd()
     {
         _anim.SetBool("UsingTool", false);
+
     }
 
     public void UseItem()
@@ -68,7 +83,7 @@ public class ToolUser : MonoBehaviour
         if (_gFrz.GameIsFreezed || _gFrz.PlayerActionIsFreezed)
             return;
 
-        if (_takingAction != false || _equip.Category != "Tool")
+        if (_takingAction != false || _equip.Category != ItemCategory.Tool)
             return;
 
         SetAnimation();
