@@ -37,7 +37,7 @@ public class Movement : MonoBehaviour
         
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (_takingAction || _gFrz.GameIsFreezed)
         {
@@ -47,8 +47,14 @@ public class Movement : MonoBehaviour
             return;
         }
         SetupMovementAndDirection();
-        MoveCharacter();
         Animation();
+
+    }
+
+
+    private void FixedUpdate()
+    {
+        MoveCharacter();
     }
     private void LateUpdate()
     {
@@ -87,19 +93,7 @@ public class Movement : MonoBehaviour
 
     private void SetupMovementAndDirection()
     {
-        //if (Input.GetAxis("Horizontal") == 0)
-        //    _xMovement = 0;
-        //else if (Input.GetAxis("Horizontal") > 0)
-        //    _xMovement = 1;
-        //else if (Input.GetAxis("Horizontal") < 0)
-        //    _xMovement = -1;
-        //if (Input.GetAxis("Vertical") == 0)
-        //    _yMovement = 0;
-        //else if (Input.GetAxis("Vertical") > 0)
-        //    _yMovement = 1;
-        //else if (Input.GetAxis("Vertical") < 0)
-        //    _yMovement = -1;
-
+        
         if (_xMovement == 0 && _yMovement == 0)
             return;
 

@@ -8,6 +8,7 @@ TagManager:
   - Canvas
   - Collectable
   - UIScripts
+  - ItemUser
   layers:
   - Default
   - TransparentFX

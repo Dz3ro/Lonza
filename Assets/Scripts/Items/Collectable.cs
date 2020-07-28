@@ -85,6 +85,6 @@ public class Collectable : ObjectInteractable
     }
     public override void WhenPlayerInteracts()
     {
-        throw new System.NotImplementedException();
+        
     }
 }

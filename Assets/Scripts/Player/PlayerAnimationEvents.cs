@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PickItem : MonoBehaviour
+public class PlayerAnimationEvents : MonoBehaviour
 {
     /// <summary>
     /// SCRIPT RESPONSIBLE FOR VISUAL ITEMS PICKING AND DELETING ITEM FROM SPACE AFTER PICK
@@ -18,8 +18,8 @@ public class PickItem : MonoBehaviour
     private Animator _anim;
     private Movement _mov;
     private Sprite _itemImg;
+    private Animator _animTool;
 
-    private int _plrSortOrder;
     private float _pickOffset = 0.7f;
 
     private void Awake()
@@ -27,7 +27,7 @@ public class PickItem : MonoBehaviour
         _anim = gameObject.GetComponent<Animator>();
         _mov = gameObject.GetComponent<Movement>();
         _itemPImg = _itemP.GetComponent<SpriteRenderer>();
-        _plrSortOrder = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>().sortingOrder;
+        GetToolAnimatior();
     }
 
     private void Start()
@@ -171,11 +171,13 @@ public class PickItem : MonoBehaviour
     private void PickItemFrame2(Vector3 ItemLocalPosition,
         bool LayerItemInFrontOfCharacter)
     {
+        var plrSortOrder = GameObject.FindGameObjectWithTag("Player")
+            .GetComponent<SpriteRenderer>().sortingOrder;
         _itemPImg.sprite = _itemImg;
         if (LayerItemInFrontOfCharacter)
-            _itemPImg.sortingOrder = _plrSortOrder + 1;
+            _itemPImg.sortingOrder = plrSortOrder + 1;
         else
-            _itemPImg.sortingOrder = _plrSortOrder - 1;
+            _itemPImg.sortingOrder = plrSortOrder - 1;
         _itemP.transform.localPosition = ItemLocalPosition;
 
         Destroy(_itemPicked);
@@ -202,5 +204,20 @@ public class PickItem : MonoBehaviour
     {
         _mov.TakingAction = false;
         _anim.SetBool("UsingTool", false);
+        _animTool.SetBool("UsingTool", false);
+    }
+    private void GetToolAnimatior()
+    {
+        var animators = gameObject.GetComponentsInChildren<Animator>();
+
+        foreach (var animator in animators)
+            if (animator.gameObject != gameObject)
+                _animTool = animator;
+
+    }
+
+    public void StartFishingAfterThrowingBubble()
+    {
+
     }
 }

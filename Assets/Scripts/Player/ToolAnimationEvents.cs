@@ -1,19 +1,20 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class ToolUser : MonoBehaviour
+public class ToolAnimationEvents : MonoBehaviour
 {
+    [SerializeField] private GameObject FishingBubbler;
+
     private PlayerInventory _plrInv;
     private Item _equip;
     private Movement _plrMov;
     private ItemsCreator _allItems;
     private Animator _anim;
     private Animator _plrAnim;
-    private PlayerFacing _plrFac;
     private ToolsLogic _toolLog;
     private GameFreezer _gFrz;
+    private Fishing _fishing;
 
-    private Direction _dir;
     private GameObject _plr;
     private bool _takingAction;
 
@@ -21,6 +22,8 @@ public class ToolUser : MonoBehaviour
 
     private SpriteRenderer _sprRen;
     private SortingOrderManager _sprOrdMan;
+
+
 
     private void Awake()
     {
@@ -32,12 +35,12 @@ public class ToolUser : MonoBehaviour
            .GetComponent<ItemsCreator>();
         _anim = GetComponent<Animator>();
         _plrAnim = _plr.GetComponent<Animator>();
-        _plrFac = _plr.GetComponentInChildren<PlayerFacing>();
         _toolLog = GetComponent<ToolsLogic>();
         _gFrz = _plr.GetComponentInChildren<GameFreezer>();
         _sprRen = GetComponent<SpriteRenderer>();
         _sprOrdMan = GameObject.FindGameObjectWithTag("MainCamera")
             .GetComponent<SortingOrderManager>();
+        _fishing = GetComponent<Fishing>();
     }
 
     private void Start()
@@ -47,7 +50,6 @@ public class ToolUser : MonoBehaviour
 
     private void Update()
     {
-        _dir = _plrMov.PlayerFacing;
         _takingAction = _plrMov.TakingAction;
         _equip = _plrInv.ItemEquiped.Item;
     }
@@ -57,30 +59,16 @@ public class ToolUser : MonoBehaviour
         _sprOrdMan.SetSortingOrderForPlayerItem(_sprRen);
     }
 
-    public void ItemUsageStart()
-    {
-        _plrMov.TakingAction = true;
-    }
-
-    public void ItemUsageEnd()
-    {
-        _anim.SetBool("UsingTool", false);
-    }
-
     public void UseItem()
     {
-        StartPicking();
+        UseToolLogic();
     }
 
-    private void StartPicking()
+    public void UseItemExtras()
     {
-        if (_gFrz.GameIsFreezed || _gFrz.PlayerActionIsFreezed)
+        if (_equip.Type != ItemType.FishingTool)
             return;
-
-        if (_takingAction != false || _equip.Category != ItemCategory.Tool)
-            return;
-
-        SetAnimation();
+        _fishing.CastFishingRod();
     }
 
     public void ToolFrameLeft0()
@@ -106,7 +94,6 @@ public class ToolUser : MonoBehaviour
     public void ToolFrameLeft4()
     {
         SetTransforms(gameObject, -0.78f, -0.18f, 90f);
-        //_plrFac.UseTool(_equip);
         _toolLog.UseTool(_equip);
     }
 
@@ -133,7 +120,6 @@ public class ToolUser : MonoBehaviour
     public void ToolFrameRight4()
     {
         SetTransforms(gameObject, 0.78f, -0.18f, -90f);
-        //_plrFac.UseTool(_equip);
         _toolLog.UseTool(_equip);
     }
 
@@ -160,7 +146,6 @@ public class ToolUser : MonoBehaviour
     public void ToolFrameFront4()
     {
         SetTransforms(gameObject, 0f, -0.29f);
-        //_plrFac.UseTool(_equip);
         _toolLog.UseTool(_equip);
     }
 
@@ -190,8 +175,121 @@ public class ToolUser : MonoBehaviour
     public void ToolFrameBack4()
     {
         SetTransforms(gameObject, 0f, 0);
-        //_plrFac.UseTool(_equip);
         _toolLog.UseTool(_equip);
+    }
+
+    public void FishingFrameRight0()
+    {
+        SetTransforms(gameObject, -0.69f, 0.84f);
+    }
+
+    public void FishingFrameRight1()
+    {
+        SetTransforms(gameObject, -0.2f, 0.96f);
+    }
+
+    public void FishingFrameRight2()
+    {
+        SetTransforms(gameObject, -0.03f, 0.99f);
+    }
+
+    public void FishingFrameRight3()
+    {
+        SetTransforms(gameObject, 0.94f, 0.65f);
+    }
+
+    public void FishingFrameRight4()
+    {
+        SetTransforms(gameObject, 1.01f, 0.2f);
+    }
+
+    public void FishingFrameLeft0()
+    {
+        SetTransforms(gameObject, 0.69f, 0.84f);
+    }
+
+    public void FishingFrameLeft1()
+    {
+        SetTransforms(gameObject, 0.2f, 0.96f);
+    }
+
+    public void FishingFrameLeft2()
+    {
+        SetTransforms(gameObject, 0.03f, 0.99f);
+    }
+
+    public void FishingFrameLeft3()
+    {
+        SetTransforms(gameObject, -0.94f, 0.65f);
+    }
+
+    public void FishingFrameLeft4()
+    {
+        SetTransforms(gameObject, -1.01f, 0.2f);
+    }
+
+    public void FishingFrameFront0()
+    {
+        SetTransforms(gameObject, 0f, 0.83f);
+    }
+
+    public void FishingFrameFront1()
+    {
+        SetTransforms(gameObject, 0f, 0.93f);
+    }
+
+    public void FishingFrameFront2()
+    {
+        SetTransforms(gameObject, 0f, 1.09f);
+    }
+
+    public void FishingFrameFront3()
+    {
+        SetTransforms(gameObject, 0f, -0.91f);
+
+    }
+
+    public void FishingFrameFront4()
+    {
+        SetTransforms(gameObject, 0f, -1.00f);
+
+    }
+
+    public void FishingFrameBack0()
+    {
+        var toomImg = gameObject.GetComponent<SpriteRenderer>();
+        var plrImg = _plr.GetComponent<SpriteRenderer>();
+        toomImg.sortingOrder = plrImg.sortingOrder - 1;
+        SetTransforms(gameObject, 0f, 0.74f);
+    }
+
+    public void FishingFrameBack1()
+    {
+        //SetTransforms(gameObject, 0f, 0.87f);
+        SetTransforms(gameObject, 0f, 1.37f);
+
+    }
+
+    public void FishingFrameBack2()
+    {
+        //SetTransforms(gameObject, 0f, 0.81f);
+        SetTransforms(gameObject, 0f, 1.21f);
+
+    }
+
+    public void FishingFrameBack3()
+    {
+        // SetTransforms(gameObject, 0f, 0.3f);
+        SetTransforms(gameObject, 0f, 1.1f);
+
+
+    }
+
+    public void FishingFrameBack4()
+    {
+        //SetTransforms(gameObject, 0f, 0f);
+        SetTransforms(gameObject, 0f, 0.8f);
+
     }
 
     public void FinishUsingTool()
@@ -206,9 +304,15 @@ public class ToolUser : MonoBehaviour
         gObj.transform.localEulerAngles = new Vector3(0, 0, rotation);
     }
 
+    
     private void SetAnimation()
     {
-        gameObject.GetComponent<SpriteRenderer>().sortingOrder = _plr.GetComponent<SpriteRenderer>().sortingOrder + 1;
+        if (_equip.Type == ItemType.FishingTool)
+        {
+            _fishing.StartFishing();
+            return;
+        }
+
         var dir = _plrMov.ShowDirectionAsIntForAnimator();
 
         _plrAnim.SetBool("UsingTool", true);
@@ -220,6 +324,24 @@ public class ToolUser : MonoBehaviour
         _anim.SetInteger("ToolId", ItemId);
     }
 
+    private void UseToolLogic()
+    {
+        if (_gFrz.GameIsFreezed || _gFrz.PlayerActionIsFreezed)
+            return;
+
+        if (_takingAction != false || _equip.Category != ItemCategory.Tool)
+            return;
+
+        SetAnimation();
+    }
+
+    
+
+    public void FishAfterThrow()
+    {
+        //_plrAnim.SetTrigger("FishAfterThrow");
+    }
+
     private void SetAnimationsId()
     {
         _toolAnimationsId = new Dictionary<Item, int>();
@@ -227,5 +349,8 @@ public class ToolUser : MonoBehaviour
         _toolAnimationsId.Add(_allItems.Pickaxe, 0);
         _toolAnimationsId.Add(_allItems.Axe, 1);
         _toolAnimationsId.Add(_allItems.Hoe, 2);
+        _toolAnimationsId.Add(_allItems.FishingRod, 3);
     }
+
+    
 }

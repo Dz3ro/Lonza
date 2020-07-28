@@ -37,9 +37,6 @@ public class Tree : ObjectInteractiveWithTool
         FallTree();
     }
 
-    private void LateUpdate()
-    {
-    }
 
     public override void OnToolUse(Item item)
     {

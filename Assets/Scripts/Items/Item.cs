@@ -2,11 +2,11 @@
 
 public enum ItemType
 {
-    Axe, Pickaxe, Hoe, None,  
+    Axe, Pickaxe, Hoe, FishingTool, None,  
 }
 public enum ItemCategory
 {
-    Tool, CraftingMaterialOnly, Collectable,Weapon, None
+    Tool, CraftingMaterialOnly, Collectable, Weapon, None
 }
 
 public class Item 

@@ -21,7 +21,7 @@ public class Pickable : ObjectInteractable
             .GetComponent<ItemsAddRemoveSearch>();
         z.ItemAdd(item);
         GameObject.FindGameObjectWithTag("Player")
-            .GetComponent<PickItem>().PickUp(gameObject);
+            .GetComponent<PlayerAnimationEvents>().PickUp(gameObject);
     }
 
     

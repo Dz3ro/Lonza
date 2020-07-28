@@ -26,7 +26,6 @@ public class ToolsLogic : MonoBehaviour
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         _equip = _plrInv.ItemEquiped.Item;
@@ -36,10 +35,14 @@ public class ToolsLogic : MonoBehaviour
     {
         if (item.Category != ItemCategory.Tool)
             return;
-        if (item.Name == "Hoe")
+
+        if (item.Type == ItemType.Hoe)
             UseHoe();
-        else 
-            UseAxeAndPickaxe();
+        else if (item.Type == ItemType.Axe || item.Type == ItemType.Pickaxe)
+            UseAxeOrPickaxe();
+        else if (item.Type == ItemType.FishingTool)
+            UseFishingRod();
+
     }
     private void UseHoe()
     {
@@ -50,9 +53,14 @@ public class ToolsLogic : MonoBehaviour
             Quaternion.identity);
 
     }
-    private void UseAxeAndPickaxe()
+    private void UseAxeOrPickaxe()
     {
         _plrFac.UseTool(_equip);
+    }
+
+    private void UseFishingRod()
+    {
+
     }
 
 }

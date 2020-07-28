@@ -465,7 +465,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -671,6 +671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6b3634f9c98e9f49aae1e68b9918cba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FishingBubbler: {fileID: 0}
 --- !u!95 &5419112593382127141
 Animator:
   serializedVersion: 3

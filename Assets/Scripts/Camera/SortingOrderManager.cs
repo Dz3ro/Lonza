@@ -2,7 +2,7 @@
 
 public class SortingOrderManager : MonoBehaviour
 {
-    private int _positionAccuracy = 2;
+    private int _positionAccuracy = 5;
 
     private GameObject _plr;
     private SpriteRenderer _plrSprRen;
@@ -33,13 +33,13 @@ public class SortingOrderManager : MonoBehaviour
     }
     public void SetSortingOrderForTree(SpriteRenderer spriteRenderer)
     {
-        var offset = 1f;
+        var offset = 0.5f;
 
         SpriteRenderer sprParent = spriteRenderer;
         SpriteRenderer sprChild = spriteRenderer.gameObject.transform
             .GetChild(0).GetComponent<SpriteRenderer>();
 
-        sprChild.sortingOrder = (int)(100 - (transform.position.y + offset)) * 2;
+        sprChild.sortingOrder = (int)(100 - (transform.position.y + offset)) * _positionAccuracy;
         sprParent.sortingOrder = sprChild.sortingOrder - 1;
     }
 }

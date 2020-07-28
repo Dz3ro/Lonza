@@ -12,6 +12,7 @@ public class ItemsCreator : MonoBehaviour
     public Sprite SpriteAxe;
     public Sprite SpriteHoe;
     public Sprite SpriteFishingRod;
+    public Sprite SpriteGrayFish;
 
 
     public List<Item> ItemsList = new List<Item>();
@@ -28,6 +29,8 @@ public class ItemsCreator : MonoBehaviour
     public Item Axe = new Item();
     public Item Hoe = new Item();
     public Item FishingRod = new Item();
+
+    public Item GrayFish = new Item();
     ///////
 
 
@@ -78,7 +81,8 @@ public class ItemsCreator : MonoBehaviour
         CreateItem(Pickaxe, "Pickaxe", ItemCategory.Tool, ItemType.Pickaxe, 10, 0, 1, SpritePickaxe);
         CreateItem(Axe, "Axe", ItemCategory.Tool, ItemType.Axe,10, 0, 1, SpriteAxe);
         CreateItem(Hoe, "Hoe", ItemCategory.Tool, ItemType.Hoe, 1, SpriteHoe);
-        CreateItem(FishingRod, "Fishing Rod", ItemCategory.Tool, ItemType.None, 1, SpriteFishingRod);
+        CreateItem(FishingRod, "Fishing Rod", ItemCategory.Tool, ItemType.FishingTool, 1, SpriteFishingRod);
+        CreateItem(GrayFish, "Grayfish", ItemCategory.Collectable, ItemType.None, 16, SpriteGrayFish);
 
     }
 

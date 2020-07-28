@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class Controls : MonoBehaviour
 {
-    private KeyCode _moveLeft = KeyCode.A;
-    private KeyCode _moveRight = KeyCode.D;
-    private KeyCode _moveUp = KeyCode.W;
-    private KeyCode _moveDown = KeyCode.S;
-    private KeyCode _invToggle = KeyCode.E;
-    private KeyCode _actionMain = KeyCode.Mouse0;
-    private KeyCode _actionAlt = KeyCode.Mouse1;
+    public readonly KeyCode MoveLeft = KeyCode.A;
+    public readonly KeyCode MoveRight = KeyCode.D;
+    public readonly KeyCode MoveUp = KeyCode.W;
+    public readonly KeyCode MoveDown = KeyCode.S;
+    public readonly KeyCode InvToggle = KeyCode.E;
+    public readonly KeyCode ActionMain = KeyCode.Mouse0;
+    public readonly KeyCode ActionAlt = KeyCode.Mouse1;
 
 
-    private GameObject _plr;
+private GameObject _plr;
     private GameObject _scrptUI;
     private GameObject _scrptInv;
 
     private Movement _plrMov;
     private InventoryToggler _invTog;
     private PlayerFacing _plrFac;
-    private ToolUser _toolUser;
+    private ToolAnimationEvents _toolUser;
 
     private void Awake()
     {
@@ -31,7 +31,7 @@ public class Controls : MonoBehaviour
         _plrMov = _plr.GetComponent<Movement>();
         _invTog = _scrptUI.GetComponent<InventoryToggler>();
         _plrFac = _plr.GetComponentInChildren<PlayerFacing>();
-        _toolUser = _plr.GetComponentInChildren<ToolUser>();
+        _toolUser = _plr.GetComponentInChildren<ToolAnimationEvents>();
     }
     void Start()
     {
@@ -46,32 +46,34 @@ public class Controls : MonoBehaviour
     }
     private void Movement()
     {
-        if (!Input.GetKey(_moveLeft) &&
-            !Input.GetKey(_moveRight))
+        if (!Input.GetKey(MoveLeft) &&
+            !Input.GetKey(MoveRight))
             _plrMov.StopHorizontalMovement();
-        else if (Input.GetKey(_moveLeft))
+        else if (Input.GetKey(MoveLeft))
             _plrMov.MoveLeft();
-        else if (Input.GetKey(_moveRight))
+        else if (Input.GetKey(MoveRight))
             _plrMov.MoveRight();
 
-        if (!Input.GetKey(_moveUp) &&
-            !Input.GetKey(_moveDown))
+        if (!Input.GetKey(MoveUp) &&
+            !Input.GetKey(MoveDown))
             _plrMov.StopVerticalMovement();
-        else if (Input.GetKey(_moveUp))
+        else if (Input.GetKey(MoveUp))
             _plrMov.MoveUp();
-        else if (Input.GetKey(_moveDown))
+        else if (Input.GetKey(MoveDown))
             _plrMov.MoveDown();
     }
     private void ToggleInventory()
     {
-        if (Input.GetKeyDown(_invToggle))
+        if (Input.GetKeyDown(InvToggle))
             _invTog.ToggleInventoryUI();
     }
     private void TakeAction()
     {
-        if (Input.GetKeyDown(_actionMain))
+        if (Input.GetKeyDown(ActionMain))
             _toolUser.UseItem();
-        else if (Input.GetKeyDown(_actionAlt))
+        else if (Input.GetKeyUp(ActionMain))
+            _toolUser.UseItemExtras();
+        else if (Input.GetKeyDown(ActionAlt))
             _plrFac.TakeActionAlt();
     }
 

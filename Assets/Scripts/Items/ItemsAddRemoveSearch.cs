@@ -24,7 +24,7 @@ public class ItemsAddRemoveSearch : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown("o"))
-            ItemAdd("Axe");
+            ItemAdd("Fishing Rod");
 
         //if (Input.GetKeyDown("e"))
         //    ItemAdd("Pickaxe");
