@@ -17,13 +17,20 @@ public class SlotEquip : MonoBehaviour
     private RectTransform _slotEquipedPos;
     private Image _slotImage;
     private RectTransform _currentSlotPos;
-
+    private Controls _ctrls;
+    private Movement _plrMov;
 
     private void Awake()
     {
         _slotImage = GetComponent<Image>();
         _slotEquipedPos = GetComponent<RectTransform>();
-        _plrInv = GameObject.FindGameObjectWithTag("Inventory").GetComponent<PlayerInventory>();
+        _plrInv = GameObject.FindGameObjectWithTag("Inventory")
+            .GetComponent<PlayerInventory>();
+
+        var player = GameObject.FindGameObjectWithTag("Player");
+
+        _ctrls = player.GetComponent<Controls>();
+        _plrMov = player.GetComponent<Movement>();
     }
 
     
@@ -31,7 +38,7 @@ public class SlotEquip : MonoBehaviour
     private void Update()
     {
         SlotEquipedBehaviour();
-        SetEquipedSlotInInventoryScript();
+        //SetEquipedSlotInInventoryScript();
     }
 
 
@@ -42,11 +49,6 @@ public class SlotEquip : MonoBehaviour
         return item;
     }
 
-
-    private void SetEquipedSlotInInventoryScript()
-    {
-        _plrInv.ItemEquiped = _plrInv.Inventory[_currentInvSlot];
-    }
     private void SlotEquipedBehaviour()
     {
         if (_plrInv.AllSlotsInInvertoryPartAreEmpty())
@@ -62,16 +64,16 @@ public class SlotEquip : MonoBehaviour
         _slotImage.color = Color.white;
         MoveSlotEquipedByPlayer();
         MoveSlotEquipedAuto();
+        _plrInv.ItemEquiped = _plrInv.Inventory[_currentInvSlot];
     }
     private void MoveSlotEquipedByPlayer()
     {
-        var scroll = Input.GetAxis("Mouse ScrollWheel");
-
-        if (scroll == 0)
+        if (_plrMov.TakingAction)
             return;
-        if (scroll > 0)
+
+        if (_ctrls.ScrollUp)
             SlotEquipedSetupLogic(1);
-        else if (scroll < 0)
+        else if (_ctrls.ScrollDown)
             SlotEquipedSetupLogic(-1);
     }
     private void MoveSlotEquipedAuto()

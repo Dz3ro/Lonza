@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Controls : MonoBehaviour
 {
@@ -11,9 +9,12 @@ public class Controls : MonoBehaviour
     public readonly KeyCode InvToggle = KeyCode.E;
     public readonly KeyCode ActionMain = KeyCode.Mouse0;
     public readonly KeyCode ActionAlt = KeyCode.Mouse1;
+    public bool ScrollUp { get; private set; }
+    public bool ScrollDown { get; private set; }
 
 
-private GameObject _plr;
+
+    private GameObject _plr;
     private GameObject _scrptUI;
     private GameObject _scrptInv;
 
@@ -33,17 +34,26 @@ private GameObject _plr;
         _plrFac = _plr.GetComponentInChildren<PlayerFacing>();
         _toolUser = _plr.GetComponentInChildren<ToolAnimationEvents>();
     }
-    void Start()
+
+    private void Start()
     {
-        
     }
 
-    void Update()
+    private void Update()
     {
         Movement();
         ToggleInventory();
         TakeAction();
+        DetectScrolling();
     }
+
+    private void DetectScrolling()
+    {
+        ScrollUp = Input.GetAxis("Mouse ScrollWheel") > 0;
+        ScrollDown = Input.GetAxis("Mouse ScrollWheel") < 0;
+
+    }
+
     private void Movement()
     {
         if (!Input.GetKey(MoveLeft) &&
@@ -62,11 +72,13 @@ private GameObject _plr;
         else if (Input.GetKey(MoveDown))
             _plrMov.MoveDown();
     }
+
     private void ToggleInventory()
     {
         if (Input.GetKeyDown(InvToggle))
             _invTog.ToggleInventoryUI();
     }
+
     private void TakeAction()
     {
         if (Input.GetKeyDown(ActionMain))
@@ -76,5 +88,4 @@ private GameObject _plr;
         else if (Input.GetKeyDown(ActionAlt))
             _plrFac.TakeActionAlt();
     }
-
 }
