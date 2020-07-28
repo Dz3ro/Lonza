@@ -307,8 +307,11 @@ public class ToolAnimationEvents : MonoBehaviour
     
     private void SetAnimation()
     {
+        int ItemId;
         if (_equip.Type == ItemType.FishingTool)
         {
+            ItemId = _toolAnimationsId[_equip];
+            _anim.SetInteger("ToolId", ItemId);
             _fishing.StartFishing();
             return;
         }
@@ -320,7 +323,9 @@ public class ToolAnimationEvents : MonoBehaviour
         _plrAnim.SetInteger("Direction", dir);
         _anim.SetInteger("Direction", dir);
 
-        var ItemId = _toolAnimationsId[_equip];
+        //var ItemId = _toolAnimationsId[_equip];
+        ItemId = _toolAnimationsId[_equip];
+
         _anim.SetInteger("ToolId", ItemId);
     }
 
