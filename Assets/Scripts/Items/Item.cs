@@ -6,7 +6,7 @@ public enum ItemType
 }
 public enum ItemCategory
 {
-    Tool, CraftingMaterialOnly, Collectable, Weapon, None
+    Tool, CraftingMaterialOnly, Collectable, Weapon, None, Placeable
 }
 
 public class Item 

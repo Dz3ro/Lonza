@@ -1,14 +1,16 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerFacing : MonoBehaviour
 {
+
+    public Collider2D FacingColision { get { return _currentCollision; } private set {; } }
     private GameObject _player;
     private Movement _mov;
     private ObjectInteractable _interaction;
     private ObjectInteractiveWithTool _toolUse;
     private Collider2D _currentCollision;
-
 
 
     public float YOnMovementHorizontal = -0.5f;
@@ -17,7 +19,6 @@ public class PlayerFacing : MonoBehaviour
 
     public float YOnMovementDown = -1.1f;
 
-    private PlayerInventory _plrInv;
     private GameFreezer _gFrz;
 
     private string _tillableTilemapName = "DirtToTill";
@@ -27,19 +28,16 @@ public class PlayerFacing : MonoBehaviour
     {
         _player = GameObject.FindGameObjectWithTag("Player");
         _mov = _player.GetComponent<Movement>();
-        _plrInv = _player.GetComponent<PlayerInventory>();
         _gFrz = _player.GetComponentInChildren<GameFreezer>();
     }
 
     private void Start()
     {
-        
     }
 
     private void Update()
     {
         MoveFacingBlock();
-        //Interact();
     }
 
     public void TakeActionAlt()
@@ -77,6 +75,7 @@ public class PlayerFacing : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        _currentCollision = collision;
         _toolUse = collision.gameObject.GetComponent<ObjectInteractiveWithTool>();
         _interaction = collision.gameObject.GetComponent<ObjectInteractable>();
     }
@@ -166,5 +165,10 @@ public class PlayerFacing : MonoBehaviour
         transform.position = new Vector3(finalX, finalY, 0);
     }
 
+    private IEnumerator ResetCollisionAfterTime()
+    {
+        yield return new WaitForSeconds(0.1f);
+        _currentCollision = null;
+    }
 
 }

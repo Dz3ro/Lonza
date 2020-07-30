@@ -141,6 +141,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 245888db4e3be684bb17a7781a424039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1590278977
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1590278978}
+  - component: {fileID: 1590278979}
+  m_Layer: 0
+  m_Name: ItemPlacing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1590278978
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590278977}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4090616059985419011}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1590278979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590278977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dacbb7ea12d6d3e418c0d156b83f8285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2348623768152570263
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,13 +292,22 @@ MonoBehaviour:
     type: 3}
   SpriteStick: {fileID: -1347532211411968617, guid: ca30b3ca9c7920b4287af7e6cd7082a9,
     type: 3}
-  SpriteBush: {fileID: 0}
-  SpriteToolHandle: {fileID: 0}
-  SpriteToolBinding: {fileID: 0}
-  SpritePickaxe: {fileID: 0}
-  SpriteAxe: {fileID: 0}
-  SpriteHoe: {fileID: 0}
-  SpriteFishingRod: {fileID: 0}
+  SpriteBush: {fileID: 2289616372777055746, guid: ca30b3ca9c7920b4287af7e6cd7082a9,
+    type: 3}
+  SpriteToolHandle: {fileID: 8699069900992395679, guid: 749152226abda194d9b9d153a83d1857,
+    type: 3}
+  SpriteToolBinding: {fileID: -9166200356469041071, guid: 749152226abda194d9b9d153a83d1857,
+    type: 3}
+  SpritePickaxe: {fileID: 7155652846937496742, guid: 749152226abda194d9b9d153a83d1857,
+    type: 3}
+  SpriteAxe: {fileID: 5292716684467120071, guid: 749152226abda194d9b9d153a83d1857,
+    type: 3}
+  SpriteHoe: {fileID: -5651667117540000442, guid: 749152226abda194d9b9d153a83d1857,
+    type: 3}
+  SpriteFishingRod: {fileID: 3424674198401663528, guid: 749152226abda194d9b9d153a83d1857,
+    type: 3}
+  SpriteGrayFish: {fileID: 2423646059112884714, guid: abc176cd863bd3844955b67197e903f0,
+    type: 3}
   PickableRock: {fileID: 6185156534019462576, guid: f4b2e10af936e41488dbd561699f7882,
     type: 3}
   PickableStick: {fileID: 3159209909390740702, guid: 3946dec207d11994da108a69c293896f,
@@ -367,6 +419,7 @@ Transform:
   - {fileID: 1402501510}
   - {fileID: 8883303525219047122}
   - {fileID: 2525865820213190685}
+  - {fileID: 1590278978}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -409,7 +462,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 100
-  m_Sprite: {fileID: -3355706414796545816, guid: 1f5960602a1d48347acc7944e233ce36,
+  m_Sprite: {fileID: 2455015636718561750, guid: 1f5960602a1d48347acc7944e233ce36,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -638,9 +691,11 @@ GameObject:
   - component: {fileID: 2335606070120795261}
   - component: {fileID: 5419112593382127141}
   - component: {fileID: 5279911051956548156}
+  - component: {fileID: 1441418015}
+  - component: {fileID: 1441418016}
   m_Layer: 0
   m_Name: ItemUser
-  m_TagString: Untagged
+  m_TagString: ItemUser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -653,7 +708,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6803301614682298299}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4090616059985419011}
@@ -671,7 +726,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6b3634f9c98e9f49aae1e68b9918cba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FishingBubbler: {fileID: 0}
+  FishingBubbler: {fileID: 4997903270310371956, guid: 6fab4b036af8c3f4ab6fe18b65a3d3a1,
+    type: 3}
 --- !u!95 &5419112593382127141
 Animator:
   serializedVersion: 3
@@ -729,15 +785,43 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 90
+  m_SortingOrder: 101
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.1875, y: 1.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
+--- !u!114 &1441418015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6803301614682298299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b52c618514606aa4f9115736601314d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DirtTilled: {fileID: 8594840128815148324, guid: 2afa0cedbd79f0241a5668253ce4486c,
+    type: 3}
+--- !u!114 &1441418016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6803301614682298299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2554bcd6dce855f4190ee58a723d1538, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FishingBubble: {fileID: 4997903270310371956, guid: 6fab4b036af8c3f4ab6fe18b65a3d3a1,
+    type: 3}

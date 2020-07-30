@@ -9,6 +9,4 @@ public class PickableBush : Pickable
         var bush = _allItems.Bush;
         PickItem(bush);
     }
-
-
 }

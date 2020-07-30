@@ -32,6 +32,10 @@ public class ItemsAddRemoveSearch : MonoBehaviour
         if (Input.GetKeyDown("l"))
             ItemAdd("Axe");
 
+        if (Input.GetKeyDown("k"))
+            ItemAdd(_allItems.FloorWooden, 64);
+
+
 
     }
 

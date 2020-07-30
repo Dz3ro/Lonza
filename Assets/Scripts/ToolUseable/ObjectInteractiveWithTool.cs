@@ -28,7 +28,11 @@ public class ObjectInteractiveWithTool : MonoBehaviour
         _sprOrdMan = GameObject.FindGameObjectWithTag("MainCamera")
             .GetComponent<SortingOrderManager>();
         _sprRen = GetComponent<SpriteRenderer>();
-        _sprOrdMan.SetSortingOrderForTree(_sprRen);
+
+        if (gameObject.transform.childCount == 1)
+            _sprOrdMan.SetSortingOrderForTree(_sprRen);
+        else
+            _sprOrdMan.SetSortingOrderForPlayerItem(_sprRen);
     }
 
     protected void Update()

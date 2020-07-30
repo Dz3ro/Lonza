@@ -13,6 +13,8 @@ public class ItemsCreator : MonoBehaviour
     public Sprite SpriteHoe;
     public Sprite SpriteFishingRod;
     public Sprite SpriteGrayFish;
+    public Sprite SpriteFloorWooden;
+
 
 
     public List<Item> ItemsList = new List<Item>();
@@ -29,8 +31,9 @@ public class ItemsCreator : MonoBehaviour
     public Item Axe = new Item();
     public Item Hoe = new Item();
     public Item FishingRod = new Item();
-
     public Item GrayFish = new Item();
+    public Item FloorWooden = new Item();
+
     ///////
 
 
@@ -46,6 +49,8 @@ public class ItemsCreator : MonoBehaviour
     [SerializeField] private GameObject PickableAxe = null;
     [SerializeField] private GameObject PickableHoe = null;
     [SerializeField] private GameObject PickableFishingRod = null;
+    [SerializeField] private GameObject PickableFloorWooden = null;
+
     //////
 
     /// <summary>
@@ -83,6 +88,7 @@ public class ItemsCreator : MonoBehaviour
         CreateItem(Hoe, "Hoe", ItemCategory.Tool, ItemType.Hoe, 1, SpriteHoe);
         CreateItem(FishingRod, "Fishing Rod", ItemCategory.Tool, ItemType.FishingTool, 1, SpriteFishingRod);
         CreateItem(GrayFish, "Grayfish", ItemCategory.Collectable, ItemType.None, 16, SpriteGrayFish);
+        CreateItem(FloorWooden, "Wood Floor", ItemCategory.Placeable, ItemType.None, 64, SpriteFloorWooden, PickableFloorWooden);
 
     }
 
@@ -125,7 +131,19 @@ public class ItemsCreator : MonoBehaviour
         item.VrsCollectable = vrsCollectable;
         item.VrsPickable = vrsPickable;
         ItemsList.Add(item);
-       
+    }
+
+    private void CreateItem(Item item, string name,
+        ItemCategory category, ItemType type,
+        int maxQuant, Sprite image, GameObject vrsPickable)
+    {
+        item.Name = name;
+        item.Category = category;
+        item.Type = type;
+        item.MaxQUantityPerStack = maxQuant;
+        item.Image = image;
+        item.VrsPickable = vrsPickable;
+        ItemsList.Add(item);
     }
 
 

@@ -5,10 +5,15 @@ public class Pickable : ObjectInteractable
 
     protected ItemsCreator _allItems;
 
-    protected void Start()
+    protected void Awake()
     {
         _allItems = GameObject.FindGameObjectWithTag("Inventory")
             .GetComponent<ItemsCreator>();
+    }
+
+    protected void Start()
+    {
+
     }
     public override void WhenPlayerInteracts()
     {
