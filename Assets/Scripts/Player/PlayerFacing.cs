@@ -38,6 +38,7 @@ public class PlayerFacing : MonoBehaviour
     private void Update()
     {
         MoveFacingBlock();
+
     }
 
     public void TakeActionAlt()

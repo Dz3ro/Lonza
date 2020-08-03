@@ -1,23 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class WoodenFloor : Pickable
 {
-    void Start()
+    private new void Awake()
     {
-        
+        base.Awake();
     }
 
-    void Update()
+    private new void Start()
+    {
+        base.Start();
+    }
+
+    private void Update()
     {
     }
 
     public override void WhenPlayerInteracts()
     {
         var floorWooden = _allItems.FloorWooden;
-        //var floorWooden = GameObject.FindGameObjectWithTag("Inventory")
-        //    .GetComponent<ItemsCreator>().FloorWooden;
         PickItem(floorWooden);
+        GameObject.FindGameObjectWithTag("DetectorAfterDeath")
+            .GetComponent<SpriteManagerAfterDeath>().ChangeSpritesAround(gameObject.name, transform.position);
     }
 }

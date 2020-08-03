@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7127950612101310577}
   - component: {fileID: 7127950612101310607}
   - component: {fileID: 4328035838306167471}
+  - component: {fileID: 4356911415513976669}
   m_Layer: 0
   m_Name: WoodenFloor
   m_TagString: Untagged
@@ -122,3 +123,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d952c60d2a663e945badf89a6940ae0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4356911415513976669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7127950612101310606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a48f3432f9f89de45957ac6567ef8de0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Detector: {fileID: 8775163344740282417, guid: c109f09cb28e48649ba674e6f3337dd1,
+    type: 3}
+  DetectorAfterDeath: {fileID: 856171988019256113, guid: 5cf6edcfe975d084fbde19c0510a17cd,
+    type: 3}
+  SpriteList:
+  - {fileID: 6557302944893346122, guid: 7dade12ac13e3344b8731ce36a5b7919, type: 3}
+  - {fileID: 1117468723001158516, guid: 7dade12ac13e3344b8731ce36a5b7919, type: 3}
+  - {fileID: -5803591443939322301, guid: 7dade12ac13e3344b8731ce36a5b7919, type: 3}
+  - {fileID: 7112634181921167982, guid: 7dade12ac13e3344b8731ce36a5b7919, type: 3}
+  - {fileID: -569412504926753782, guid: 7dade12ac13e3344b8731ce36a5b7919, type: 3}
+  - {fileID: 444543661458872153, guid: 7dade12ac13e3344b8731ce36a5b7919, type: 3}
+  - {fileID: 2876801577861033777, guid: 7dade12ac13e3344b8731ce36a5b7919, type: 3}
+  - {fileID: 6167536360389099662, guid: 7dade12ac13e3344b8731ce36a5b7919, type: 3}
+  - {fileID: 5972296735495428328, guid: 7dade12ac13e3344b8731ce36a5b7919, type: 3}
+  - {fileID: 4665938745762795795, guid: 7dade12ac13e3344b8731ce36a5b7919, type: 3}
+  - {fileID: -4530279041082595873, guid: 7dade12ac13e3344b8731ce36a5b7919, type: 3}
+  - {fileID: -3446786299494255956, guid: 7dade12ac13e3344b8731ce36a5b7919, type: 3}
+  - {fileID: -2172103596505746288, guid: 7dade12ac13e3344b8731ce36a5b7919, type: 3}
+  - {fileID: 3531886213103620257, guid: 7dade12ac13e3344b8731ce36a5b7919, type: 3}
+  - {fileID: -3586660525116498111, guid: 7dade12ac13e3344b8731ce36a5b7919, type: 3}
+  - {fileID: -1162549241077839033, guid: 7dade12ac13e3344b8731ce36a5b7919, type: 3}

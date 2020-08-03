@@ -6,6 +6,7 @@ public class ItemPlacing : MonoBehaviour
     private PlayerInventory _plrInv;
     private PlayerFacing _plrFac;
     private SpriteRenderer _sprRen;
+    private GameFreezer _gFrz;
     private KeyCode _actionMain;
 
     private Item _equip;
@@ -22,6 +23,7 @@ public class ItemPlacing : MonoBehaviour
             .GetComponent<PlayerInventory>();
         _plrFac = player.GetComponentInChildren<PlayerFacing>();
         _actionMain = player.GetComponent<Controls>().ActionMain;
+        _gFrz = player.GetComponentInChildren<GameFreezer>();
     }
 
     private void Start()
@@ -44,7 +46,9 @@ public class ItemPlacing : MonoBehaviour
 
     private void PlacingPreview()
     {
-        if (_equip.Category != ItemCategory.Placeable)
+        
+
+        if (_equip.Category != ItemCategory.Placeable || !_plrInv.HoldingHandIsEmpty())
         {
             _sprRen.sprite = null;
             return;
@@ -73,7 +77,7 @@ public class ItemPlacing : MonoBehaviour
         _tileIsEmpty = _plrFac.TileFacingIsEmpty();
 
         if (_equip.Category != ItemCategory.Placeable || !_tileIsEmpty ||
-             !_readyToPlace || !Input.GetKey(_actionMain))
+             !_readyToPlace || _gFrz.PlayerActionIsFreezed || !Input.GetKey(_actionMain))
             return;
 
         if (_justPlaced)
@@ -104,7 +108,7 @@ public class ItemPlacing : MonoBehaviour
 
     private IEnumerator PlacingCoolDown()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.12f);
         _justPlaced = false;
     }
 }

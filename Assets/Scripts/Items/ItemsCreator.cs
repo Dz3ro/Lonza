@@ -65,6 +65,7 @@ public class ItemsCreator : MonoBehaviour
     [SerializeField] private GameObject CollectableAxe = null;
     [SerializeField] private GameObject CollectableHoe = null;
     [SerializeField] private GameObject CollectableFishingRod = null;
+    [SerializeField] private GameObject CollectableFloorWooden = null;
     /////
 
 
@@ -88,7 +89,7 @@ public class ItemsCreator : MonoBehaviour
         CreateItem(Hoe, "Hoe", ItemCategory.Tool, ItemType.Hoe, 1, SpriteHoe);
         CreateItem(FishingRod, "Fishing Rod", ItemCategory.Tool, ItemType.FishingTool, 1, SpriteFishingRod);
         CreateItem(GrayFish, "Grayfish", ItemCategory.Collectable, ItemType.None, 16, SpriteGrayFish);
-        CreateItem(FloorWooden, "Wood Floor", ItemCategory.Placeable, ItemType.None, 64, SpriteFloorWooden, PickableFloorWooden);
+        CreateItem(FloorWooden, "Wood Floor", ItemCategory.Placeable, ItemType.None, 64, SpriteFloorWooden, CollectableFloorWooden, PickableFloorWooden);
 
     }
 

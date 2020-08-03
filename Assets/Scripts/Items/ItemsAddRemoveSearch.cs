@@ -33,7 +33,7 @@ public class ItemsAddRemoveSearch : MonoBehaviour
             ItemAdd("Axe");
 
         if (Input.GetKeyDown("k"))
-            ItemAdd(_allItems.FloorWooden, 64);
+            ItemAdd("Wood Floor", 64);
 
 
 

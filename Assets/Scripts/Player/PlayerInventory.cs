@@ -82,10 +82,13 @@ public class PlayerInventory : MonoBehaviour
     {
         for (int i = 0; i < _fastInvSlotsCount; i++)
             if (! Inventory[i].Item.ThisIsANewEmptyItem())
-
                 return false;
-
         return true;
+    }
+
+    public bool HoldingHandIsEmpty()
+    {
+        return _itemHolding.Item.ThisIsANewEmptyItem();
     }
 
     private void CreateInventory()
